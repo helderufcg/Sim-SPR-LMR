@@ -122,7 +122,7 @@
          <string/>
         </property>
         <property name="icon">
-         <iconset resource="Sim-LMR-Interface--main/icons_.qrc">
+         <iconset resource="icons_.qrc">
           <normaloff>:/icons/icons/LOGO.png</normaloff>:/icons/icons/LOGO.png</iconset>
         </property>
         <property name="iconSize">
@@ -145,8 +145,9 @@
          <font>
           <family>Ubuntu</family>
           <pointsize>10</pointsize>
+          <weight>62</weight>
           <italic>false</italic>
-          <bold>false</bold>
+          <bold>true</bold>
          </font>
         </property>
         <property name="styleSheet">
@@ -177,6 +178,7 @@ font: 500 10pt &quot;Ubuntu&quot;;</string>
          <font>
           <family>Ubuntu</family>
           <pointsize>11</pointsize>
+          <weight>50</weight>
           <italic>false</italic>
           <bold>false</bold>
          </font>
@@ -205,7 +207,7 @@ QPushButton:hover{
          <string>Help  </string>
         </property>
         <property name="icon">
-         <iconset resource="Sim-LMR-Interface--main/icons_.qrc">
+         <iconset resource="icons_.qrc">
           <normaloff>:/icons/icons/help.png</normaloff>:/icons/icons/help.png</iconset>
         </property>
         <property name="iconSize">
@@ -234,6 +236,7 @@ QPushButton:hover{
          <font>
           <family>Ubuntu</family>
           <pointsize>10</pointsize>
+          <weight>99</weight>
           <italic>false</italic>
           <bold>true</bold>
          </font>
@@ -278,8 +281,9 @@ QPushButton:hover{
          <font>
           <family>Ubuntu</family>
           <pointsize>10</pointsize>
+          <weight>62</weight>
           <italic>false</italic>
-          <bold>false</bold>
+          <bold>true</bold>
          </font>
         </property>
         <property name="cursor">
@@ -303,7 +307,7 @@ QPushButton:hover{
          <string/>
         </property>
         <property name="icon">
-         <iconset resource="Sim-LMR-Interface--main/icons_.qrc">
+         <iconset resource="icons_.qrc">
           <normaloff>:/icons/icons/close.png</normaloff>:/icons/icons/close.png</iconset>
         </property>
         <property name="iconSize">
@@ -363,7 +367,7 @@ QPushButton:hover{
          <string notr="true">background:transparent;</string>
         </property>
         <property name="currentIndex">
-         <number>3</number>
+         <number>4</number>
         </property>
         <widget class="QWidget" name="home_window">
          <property name="styleSheet">
@@ -507,6 +511,7 @@ font: 700 9pt &quot;Noto Serif Hebrew&quot;;
                   <font>
                    <family>Segoe UI Semibold</family>
                    <pointsize>15</pointsize>
+                   <weight>75</weight>
                    <bold>true</bold>
                   </font>
                  </property>
@@ -535,7 +540,7 @@ QPushButton:hover{
                   <string>Start Simulation</string>
                  </property>
                  <property name="icon">
-                  <iconset resource="Sim-LMR-Interface--main/icons_.qrc">
+                  <iconset resource="icons_.qrc">
                    <normaloff>:/icons/icons/configuracoes.png</normaloff>:/icons/icons/configuracoes.png</iconset>
                  </property>
                  <property name="iconSize">
@@ -583,6 +588,7 @@ QPushButton:hover{
                   <font>
                    <family>Segoe UI Semibold</family>
                    <pointsize>15</pointsize>
+                   <weight>75</weight>
                    <bold>true</bold>
                   </font>
                  </property>
@@ -610,7 +616,7 @@ QPushButton:hover{
                   <string>Exit</string>
                  </property>
                  <property name="icon">
-                  <iconset resource="Sim-LMR-Interface--main/icons_.qrc">
+                  <iconset resource="icons_.qrc">
                    <normaloff>:/icons/icons/logout.png</normaloff>:/icons/icons/logout.png</iconset>
                  </property>
                  <property name="iconSize">
@@ -741,7 +747,7 @@ background: transparent;</string>
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="Sim-LMR-Interface--main/icons_.qrc">
+                <iconset resource="icons_.qrc">
                  <normaloff>:/icons/icons/casa.png</normaloff>:/icons/icons/casa.png</iconset>
                </property>
                <property name="iconSize">
@@ -764,7 +770,7 @@ background: transparent;</string>
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap resource="Sim-LMR-Interface--main/icons_.qrc">:/icons/icons/simbolo-de-setas-duplas-para-a-direita-para-avancar.png</pixmap>
+                <pixmap resource="icons_.qrc">:/icons/icons/simbolo-de-setas-duplas-para-a-direita-para-avancar.png</pixmap>
                </property>
                <property name="scaledContents">
                 <bool>true</bool>
@@ -795,6 +801,7 @@ background: transparent;</string>
                 <font>
                  <family>Segoe UI Semibold</family>
                  <pointsize>11</pointsize>
+                 <weight>75</weight>
                  <bold>true</bold>
                  <underline>false</underline>
                 </font>
@@ -968,7 +975,7 @@ QPushButton:checked{ border-color: rgb(0, 170, 0);}
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="Sim-LMR-Interface--main/icons_.qrc">
+                <iconset resource="icons_.qrc">
                  <normaloff>:/icons/icons/prism.png</normaloff>:/icons/icons/prism.png</iconset>
                </property>
                <property name="iconSize">
@@ -1049,7 +1056,7 @@ QPushButton:checked{ border-color: rgb(0, 170, 0);}</string>
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="Sim-LMR-Interface--main/icons_.qrc">
+                <iconset resource="icons_.qrc">
                  <normaloff>:/icons/icons/fiber.png</normaloff>:/icons/icons/fiber.png</iconset>
                </property>
                <property name="iconSize">
@@ -1234,7 +1241,7 @@ background: transparent;</string>
                 <string> Previous</string>
                </property>
                <property name="icon">
-                <iconset resource="Sim-LMR-Interface--main/icons_.qrc">
+                <iconset resource="icons_.qrc">
                  <normaloff>:/icons/icons/simbolo-de-setas-duplas-para-a-esquerda.png</normaloff>:/icons/icons/simbolo-de-setas-duplas-para-a-esquerda.png</iconset>
                </property>
                <property name="iconSize">
@@ -1282,7 +1289,7 @@ background: transparent;</string>
                 <string>Next </string>
                </property>
                <property name="icon">
-                <iconset resource="Sim-LMR-Interface--main/icons_.qrc">
+                <iconset resource="icons_.qrc">
                  <normaloff>:/icons/icons/simbolo-de-setas-duplas-para-a-direita-para-avancar.png</normaloff>:/icons/icons/simbolo-de-setas-duplas-para-a-direita-para-avancar.png</iconset>
                </property>
                <property name="iconSize">
@@ -1405,7 +1412,7 @@ background: transparent;</string>
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="Sim-LMR-Interface--main/icons_.qrc">
+                <iconset resource="icons_.qrc">
                  <normaloff>:/icons/icons/casa.png</normaloff>:/icons/icons/casa.png</iconset>
                </property>
                <property name="iconSize">
@@ -1428,7 +1435,7 @@ background: transparent;</string>
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap resource="Sim-LMR-Interface--main/icons_.qrc">:/icons/icons/simbolo-de-setas-duplas-para-a-direita-para-avancar.png</pixmap>
+                <pixmap resource="icons_.qrc">:/icons/icons/simbolo-de-setas-duplas-para-a-direita-para-avancar.png</pixmap>
                </property>
                <property name="scaledContents">
                 <bool>true</bool>
@@ -1459,6 +1466,7 @@ background: transparent;</string>
                 <font>
                  <family>Segoe UI Semibold</family>
                  <pointsize>11</pointsize>
+                 <weight>75</weight>
                  <bold>true</bold>
                  <underline>true</underline>
                 </font>
@@ -1489,7 +1497,7 @@ background: transparent;</string>
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap resource="Sim-LMR-Interface--main/icons_.qrc">:/icons/icons/simbolo-de-setas-duplas-para-a-direita-para-avancar.png</pixmap>
+                <pixmap resource="icons_.qrc">:/icons/icons/simbolo-de-setas-duplas-para-a-direita-para-avancar.png</pixmap>
                </property>
                <property name="scaledContents">
                 <bool>true</bool>
@@ -1520,6 +1528,7 @@ background: transparent;</string>
                 <font>
                  <family>Segoe UI Semibold</family>
                  <pointsize>11</pointsize>
+                 <weight>75</weight>
                  <bold>true</bold>
                  <underline>false</underline>
                 </font>
@@ -1683,7 +1692,7 @@ QPushButton:checked{ border-color: rgb(0, 170, 0);}
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="Sim-LMR-Interface--main/icons_.qrc">
+                <iconset resource="icons_.qrc">
                  <normaloff>:/icons/icons/aim.png</normaloff>:/icons/icons/aim.png</iconset>
                </property>
                <property name="iconSize">
@@ -1756,7 +1765,7 @@ QPushButton:checked{ border-color: rgb(0, 170, 0);}
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="Sim-LMR-Interface--main/icons_.qrc">
+                <iconset resource="icons_.qrc">
                  <normaloff>:/icons/icons/wim.png</normaloff>:/icons/icons/wim.png</iconset>
                </property>
                <property name="iconSize">
@@ -1895,7 +1904,7 @@ QPushButton:checked{ border-color: rgb(0, 170, 0);}
                 <string> Previous</string>
                </property>
                <property name="icon">
-                <iconset resource="Sim-LMR-Interface--main/icons_.qrc">
+                <iconset resource="icons_.qrc">
                  <normaloff>:/icons/icons/simbolo-de-setas-duplas-para-a-esquerda.png</normaloff>:/icons/icons/simbolo-de-setas-duplas-para-a-esquerda.png</iconset>
                </property>
                <property name="iconSize">
@@ -1945,7 +1954,7 @@ QPushButton:checked{ border-color: rgb(0, 170, 0);}
                 <string>Next </string>
                </property>
                <property name="icon">
-                <iconset resource="Sim-LMR-Interface--main/icons_.qrc">
+                <iconset resource="icons_.qrc">
                  <normaloff>:/icons/icons/simbolo-de-setas-duplas-para-a-direita-para-avancar.png</normaloff>:/icons/icons/simbolo-de-setas-duplas-para-a-direita-para-avancar.png</iconset>
                </property>
                <property name="iconSize">
@@ -2044,7 +2053,7 @@ QPushButton:checked{ border-color: rgb(0, 170, 0);}
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="Sim-LMR-Interface--main/icons_.qrc">
+                <iconset resource="icons_.qrc">
                  <normaloff>:/icons/icons/casa.png</normaloff>:/icons/icons/casa.png</iconset>
                </property>
                <property name="iconSize">
@@ -2067,7 +2076,7 @@ QPushButton:checked{ border-color: rgb(0, 170, 0);}
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap resource="Sim-LMR-Interface--main/icons_.qrc">:/icons/icons/simbolo-de-setas-duplas-para-a-direita-para-avancar.png</pixmap>
+                <pixmap resource="icons_.qrc">:/icons/icons/simbolo-de-setas-duplas-para-a-direita-para-avancar.png</pixmap>
                </property>
                <property name="scaledContents">
                 <bool>true</bool>
@@ -2098,6 +2107,7 @@ QPushButton:checked{ border-color: rgb(0, 170, 0);}
                 <font>
                  <family>Segoe UI Semibold</family>
                  <pointsize>11</pointsize>
+                 <weight>75</weight>
                  <bold>true</bold>
                  <underline>true</underline>
                 </font>
@@ -2140,7 +2150,7 @@ QPushButton:checked{ border-color: rgb(0, 170, 0);}
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap resource="Sim-LMR-Interface--main/icons_.qrc">:/icons/icons/simbolo-de-setas-duplas-para-a-direita-para-avancar.png</pixmap>
+                <pixmap resource="icons_.qrc">:/icons/icons/simbolo-de-setas-duplas-para-a-direita-para-avancar.png</pixmap>
                </property>
                <property name="scaledContents">
                 <bool>true</bool>
@@ -2171,6 +2181,7 @@ QPushButton:checked{ border-color: rgb(0, 170, 0);}
                 <font>
                  <family>Segoe UI Semibold</family>
                  <pointsize>11</pointsize>
+                 <weight>75</weight>
                  <bold>true</bold>
                  <underline>true</underline>
                 </font>
@@ -2213,7 +2224,7 @@ QPushButton:checked{ border-color: rgb(0, 170, 0);}
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap resource="Sim-LMR-Interface--main/icons_.qrc">:/icons/icons/simbolo-de-setas-duplas-para-a-direita-para-avancar.png</pixmap>
+                <pixmap resource="icons_.qrc">:/icons/icons/simbolo-de-setas-duplas-para-a-direita-para-avancar.png</pixmap>
                </property>
                <property name="scaledContents">
                 <bool>true</bool>
@@ -2244,6 +2255,7 @@ QPushButton:checked{ border-color: rgb(0, 170, 0);}
                 <font>
                  <family>Segoe UI Semibold</family>
                  <pointsize>11</pointsize>
+                 <weight>75</weight>
                  <bold>true</bold>
                  <underline>false</underline>
                 </font>
@@ -2379,6 +2391,7 @@ QPushButton:checked{ border-color: rgb(0, 170, 0);}
                      <font>
                       <family>Ubuntu</family>
                       <pointsize>14</pointsize>
+                      <weight>50</weight>
                       <italic>false</italic>
                       <bold>false</bold>
                      </font>
@@ -2533,6 +2546,7 @@ QGroupBox::title  {
                         <font>
                          <family>Ubuntu</family>
                          <pointsize>12</pointsize>
+                         <weight>87</weight>
                          <italic>false</italic>
                          <bold>true</bold>
                         </font>
@@ -3834,8 +3848,9 @@ border-radius:15px;</string>
                     <font>
                      <family>Ubuntu</family>
                      <pointsize>14</pointsize>
+                     <weight>62</weight>
                      <italic>false</italic>
-                     <bold>false</bold>
+                     <bold>true</bold>
                     </font>
                    </property>
                    <property name="styleSheet">
@@ -4227,7 +4242,7 @@ QPushButton:hover{
                 <string> Previous</string>
                </property>
                <property name="icon">
-                <iconset resource="Sim-LMR-Interface--main/icons_.qrc">
+                <iconset resource="icons_.qrc">
                  <normaloff>:/icons/icons/simbolo-de-setas-duplas-para-a-esquerda.png</normaloff>:/icons/icons/simbolo-de-setas-duplas-para-a-esquerda.png</iconset>
                </property>
                <property name="iconSize">
@@ -4277,7 +4292,7 @@ QPushButton:hover{
                 <string>Next </string>
                </property>
                <property name="icon">
-                <iconset resource="Sim-LMR-Interface--main/icons_.qrc">
+                <iconset resource="icons_.qrc">
                  <normaloff>:/icons/icons/simbolo-de-setas-duplas-para-a-direita-para-avancar.png</normaloff>:/icons/icons/simbolo-de-setas-duplas-para-a-direita-para-avancar.png</iconset>
                </property>
                <property name="iconSize">
@@ -4376,7 +4391,7 @@ QPushButton:hover{
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="Sim-LMR-Interface--main/icons_.qrc">
+                <iconset resource="icons_.qrc">
                  <normaloff>:/icons/icons/casa.png</normaloff>:/icons/icons/casa.png</iconset>
                </property>
                <property name="iconSize">
@@ -4399,7 +4414,7 @@ QPushButton:hover{
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap resource="Sim-LMR-Interface--main/icons_.qrc">:/icons/icons/simbolo-de-setas-duplas-para-a-direita-para-avancar.png</pixmap>
+                <pixmap resource="icons_.qrc">:/icons/icons/simbolo-de-setas-duplas-para-a-direita-para-avancar.png</pixmap>
                </property>
                <property name="scaledContents">
                 <bool>true</bool>
@@ -4430,6 +4445,7 @@ QPushButton:hover{
                 <font>
                  <family>Segoe UI Semibold</family>
                  <pointsize>11</pointsize>
+                 <weight>75</weight>
                  <bold>true</bold>
                  <underline>true</underline>
                 </font>
@@ -4472,7 +4488,7 @@ QPushButton:hover{
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap resource="Sim-LMR-Interface--main/icons_.qrc">:/icons/icons/simbolo-de-setas-duplas-para-a-direita-para-avancar.png</pixmap>
+                <pixmap resource="icons_.qrc">:/icons/icons/simbolo-de-setas-duplas-para-a-direita-para-avancar.png</pixmap>
                </property>
                <property name="scaledContents">
                 <bool>true</bool>
@@ -4503,6 +4519,7 @@ QPushButton:hover{
                 <font>
                  <family>Segoe UI Semibold</family>
                  <pointsize>11</pointsize>
+                 <weight>75</weight>
                  <bold>true</bold>
                  <underline>true</underline>
                 </font>
@@ -4545,7 +4562,7 @@ QPushButton:hover{
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap resource="Sim-LMR-Interface--main/icons_.qrc">:/icons/icons/simbolo-de-setas-duplas-para-a-direita-para-avancar.png</pixmap>
+                <pixmap resource="icons_.qrc">:/icons/icons/simbolo-de-setas-duplas-para-a-direita-para-avancar.png</pixmap>
                </property>
                <property name="scaledContents">
                 <bool>true</bool>
@@ -4576,6 +4593,7 @@ QPushButton:hover{
                 <font>
                  <family>Segoe UI Semibold</family>
                  <pointsize>11</pointsize>
+                 <weight>75</weight>
                  <bold>true</bold>
                  <underline>true</underline>
                 </font>
@@ -4618,7 +4636,7 @@ QPushButton:hover{
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap resource="Sim-LMR-Interface--main/icons_.qrc">:/icons/icons/simbolo-de-setas-duplas-para-a-direita-para-avancar.png</pixmap>
+                <pixmap resource="icons_.qrc">:/icons/icons/simbolo-de-setas-duplas-para-a-direita-para-avancar.png</pixmap>
                </property>
                <property name="scaledContents">
                 <bool>true</bool>
@@ -4649,6 +4667,7 @@ QPushButton:hover{
                 <font>
                  <family>Segoe UI Semibold</family>
                  <pointsize>11</pointsize>
+                 <weight>75</weight>
                  <bold>true</bold>
                  <underline>false</underline>
                 </font>
@@ -4747,7 +4766,7 @@ QPushButton:hover{
               <item>
                <widget class="QStackedWidget" name="Stacked_config_mode">
                 <property name="currentIndex">
-                 <number>2</number>
+                 <number>0</number>
                 </property>
                 <widget class="QWidget" name="page_fiber_config">
                  <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -4790,8 +4809,9 @@ QPushButton:hover{
                      <font>
                       <family>Ubuntu</family>
                       <pointsize>18</pointsize>
+                      <weight>62</weight>
                       <italic>false</italic>
-                      <bold>false</bold>
+                      <bold>true</bold>
                      </font>
                     </property>
                     <property name="styleSheet">
@@ -4882,7 +4902,7 @@ background-color: rgb(255, 255, 255);</string>
                         <string/>
                        </property>
                        <property name="icon">
-                        <iconset resource="Sim-LMR-Interface--main/icons_.qrc">
+                        <iconset resource="icons_.qrc">
                          <normaloff>:/icons/icons/fiber_CRMF.png</normaloff>:/icons/icons/fiber_CRMF.png</iconset>
                        </property>
                        <property name="iconSize">
@@ -4978,6 +4998,7 @@ background-color: rgb(255, 255, 255);</string>
                         <font>
                          <family>Ubuntu</family>
                          <pointsize>14</pointsize>
+                         <weight>50</weight>
                          <italic>false</italic>
                          <bold>false</bold>
                         </font>
@@ -5068,6 +5089,7 @@ QGroupBox::title  {
                              <font>
                               <family>Ubuntu</family>
                               <pointsize>14</pointsize>
+                              <weight>50</weight>
                               <italic>false</italic>
                               <bold>false</bold>
                              </font>
@@ -5111,6 +5133,7 @@ QGroupBox::title  {
                              <font>
                               <family>Ubuntu</family>
                               <pointsize>12</pointsize>
+                              <weight>87</weight>
                               <italic>false</italic>
                               <bold>true</bold>
                              </font>
@@ -5214,6 +5237,7 @@ QDoubleSpinBox::down-button
                              <font>
                               <family>Ubuntu</family>
                               <pointsize>14</pointsize>
+                              <weight>50</weight>
                               <italic>false</italic>
                               <bold>false</bold>
                              </font>
@@ -5256,6 +5280,7 @@ QDoubleSpinBox::down-button
                              <font>
                               <family>Ubuntu</family>
                               <pointsize>12</pointsize>
+                              <weight>87</weight>
                               <italic>false</italic>
                               <bold>true</bold>
                              </font>
@@ -5477,6 +5502,7 @@ QSlider::handle:horizontal {
                         <font>
                          <family>Ubuntu</family>
                          <pointsize>14</pointsize>
+                         <weight>50</weight>
                          <italic>false</italic>
                          <bold>false</bold>
                         </font>
@@ -5559,6 +5585,7 @@ QGroupBox::title  {
                            <font>
                             <family>Ubuntu</family>
                             <pointsize>12</pointsize>
+                            <weight>87</weight>
                             <italic>false</italic>
                             <bold>true</bold>
                            </font>
@@ -5652,6 +5679,7 @@ QDoubleSpinBox::down-button
                            <font>
                             <family>Ubuntu</family>
                             <pointsize>12</pointsize>
+                            <weight>87</weight>
                             <italic>false</italic>
                             <bold>true</bold>
                            </font>
@@ -5862,6 +5890,7 @@ QDoubleSpinBox::down-button
                            <font>
                             <family>Ubuntu</family>
                             <pointsize>14</pointsize>
+                            <weight>50</weight>
                             <italic>false</italic>
                             <bold>false</bold>
                            </font>
@@ -5921,6 +5950,7 @@ QDoubleSpinBox::down-button
                            <font>
                             <family>Ubuntu</family>
                             <pointsize>12</pointsize>
+                            <weight>87</weight>
                             <italic>false</italic>
                             <bold>true</bold>
                            </font>
@@ -6011,6 +6041,7 @@ QDoubleSpinBox::down-button
                            <font>
                             <family>Ubuntu</family>
                             <pointsize>14</pointsize>
+                            <weight>50</weight>
                             <italic>false</italic>
                             <bold>false</bold>
                            </font>
@@ -6107,8 +6138,9 @@ QDoubleSpinBox::down-button
                      <font>
                       <family>Ubuntu</family>
                       <pointsize>18</pointsize>
+                      <weight>62</weight>
                       <italic>false</italic>
-                      <bold>false</bold>
+                      <bold>true</bold>
                      </font>
                     </property>
                     <property name="styleSheet">
@@ -6199,7 +6231,7 @@ background-color: rgb(255, 255, 255);</string>
                         <string/>
                        </property>
                        <property name="icon">
-                        <iconset resource="Sim-LMR-Interface--main/icons_.qrc">
+                        <iconset resource="icons_.qrc">
                          <normaloff>:/icons/icons/wim.png</normaloff>:/icons/icons/wim.png</iconset>
                        </property>
                        <property name="iconSize">
@@ -6295,6 +6327,7 @@ background-color: rgb(255, 255, 255);</string>
                         <font>
                          <family>Ubuntu</family>
                          <pointsize>14</pointsize>
+                         <weight>50</weight>
                          <italic>false</italic>
                          <bold>false</bold>
                         </font>
@@ -6385,6 +6418,7 @@ QGroupBox::title  {
                              <font>
                               <family>Ubuntu</family>
                               <pointsize>14</pointsize>
+                              <weight>50</weight>
                               <italic>false</italic>
                               <bold>false</bold>
                              </font>
@@ -6428,6 +6462,7 @@ QGroupBox::title  {
                              <font>
                               <family>Ubuntu</family>
                               <pointsize>12</pointsize>
+                              <weight>87</weight>
                               <italic>false</italic>
                               <bold>true</bold>
                              </font>
@@ -6531,6 +6566,7 @@ QDoubleSpinBox::down-button
                              <font>
                               <family>Ubuntu</family>
                               <pointsize>14</pointsize>
+                              <weight>50</weight>
                               <italic>false</italic>
                               <bold>false</bold>
                              </font>
@@ -6573,6 +6609,7 @@ QDoubleSpinBox::down-button
                              <font>
                               <family>Ubuntu</family>
                               <pointsize>12</pointsize>
+                              <weight>87</weight>
                               <italic>false</italic>
                               <bold>true</bold>
                              </font>
@@ -6779,6 +6816,7 @@ QSlider::handle:horizontal {
                         <font>
                          <family>Ubuntu</family>
                          <pointsize>14</pointsize>
+                         <weight>50</weight>
                          <italic>false</italic>
                          <bold>false</bold>
                         </font>
@@ -6933,6 +6971,7 @@ QGroupBox::title  {
                            <font>
                             <family>Ubuntu</family>
                             <pointsize>12</pointsize>
+                            <weight>87</weight>
                             <italic>false</italic>
                             <bold>true</bold>
                            </font>
@@ -7070,8 +7109,9 @@ QDoubleSpinBox::down-button
                      <font>
                       <family>Ubuntu</family>
                       <pointsize>18</pointsize>
+                      <weight>62</weight>
                       <italic>false</italic>
-                      <bold>false</bold>
+                      <bold>true</bold>
                      </font>
                     </property>
                     <property name="styleSheet">
@@ -7156,7 +7196,7 @@ background-color: rgb(255, 255, 255);</string>
                         <string/>
                        </property>
                        <property name="icon">
-                        <iconset resource="Sim-LMR-Interface--main/icons_.qrc">
+                        <iconset resource="icons_.qrc">
                          <normaloff>:/icons/icons/aim.png</normaloff>:/icons/icons/aim.png</iconset>
                        </property>
                        <property name="iconSize">
@@ -7252,6 +7292,7 @@ background-color: rgb(255, 255, 255);</string>
                         <font>
                          <family>Ubuntu</family>
                          <pointsize>14</pointsize>
+                         <weight>50</weight>
                          <italic>false</italic>
                          <bold>false</bold>
                         </font>
@@ -7338,6 +7379,7 @@ QGroupBox::title  {
                              <font>
                               <family>Ubuntu</family>
                               <pointsize>14</pointsize>
+                              <weight>50</weight>
                               <italic>false</italic>
                               <bold>false</bold>
                              </font>
@@ -7375,6 +7417,7 @@ QGroupBox::title  {
                              <font>
                               <family>Ubuntu</family>
                               <pointsize>12</pointsize>
+                              <weight>87</weight>
                               <italic>false</italic>
                               <bold>true</bold>
                              </font>
@@ -7469,6 +7512,7 @@ QDoubleSpinBox::down-button
                              <font>
                               <family>Ubuntu</family>
                               <pointsize>14</pointsize>
+                              <weight>50</weight>
                               <italic>false</italic>
                               <bold>false</bold>
                              </font>
@@ -7505,6 +7549,7 @@ QDoubleSpinBox::down-button
                              <font>
                               <family>Ubuntu</family>
                               <pointsize>12</pointsize>
+                              <weight>87</weight>
                               <italic>false</italic>
                               <bold>true</bold>
                              </font>
@@ -7737,8 +7782,9 @@ border-radius:15px;</string>
                     <font>
                      <family>Ubuntu</family>
                      <pointsize>14</pointsize>
+                     <weight>62</weight>
                      <italic>false</italic>
-                     <bold>false</bold>
+                     <bold>true</bold>
                     </font>
                    </property>
                    <property name="styleSheet">
@@ -8175,7 +8221,7 @@ QPushButton:hover{
                    <string>Run</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="Sim-LMR-Interface--main/icons_.qrc">
+                   <iconset resource="icons_.qrc">
                     <normaloff>:/icons/icons/configuracoes.png</normaloff>:/icons/icons/configuracoes.png</iconset>
                   </property>
                   <property name="iconSize">
@@ -8261,7 +8307,7 @@ QPushButton:hover{
                 <string> Previous</string>
                </property>
                <property name="icon">
-                <iconset resource="Sim-LMR-Interface--main/icons_.qrc">
+                <iconset resource="icons_.qrc">
                  <normaloff>:/icons/icons/simbolo-de-setas-duplas-para-a-esquerda.png</normaloff>:/icons/icons/simbolo-de-setas-duplas-para-a-esquerda.png</iconset>
                </property>
                <property name="iconSize">
@@ -8345,8 +8391,9 @@ color: rgb(255, 255, 255);
          <font>
           <family>Ubuntu</family>
           <pointsize>10</pointsize>
+          <weight>62</weight>
           <italic>false</italic>
-          <bold>false</bold>
+          <bold>true</bold>
          </font>
         </property>
         <property name="styleSheet">
@@ -8365,6 +8412,7 @@ font: 500 10pt &quot;Ubuntu&quot;;</string>
  </widget>
  <resources>
   <include location="icons_.qrc"/>
+  <include location="Sim-LMR-Interface--main/icons_.qrc"/>
  </resources>
  <connections>
   <connection>

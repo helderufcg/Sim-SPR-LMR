@@ -158,6 +158,7 @@ class MainWindow(QWidget, Ui_Widget):
         ## 'Characteristics of Fiber' page buttons
         self.custom_btn.toggled.connect(self.enable_gb_coef_sellmeier)
         self.btn_add_mat_core.clicked.connect(self.add_core)
+        self.btn_add_coef.clicked.connect(self.add_core)
 
         ## Enable insertion of new layers
         self.btn_new_layer.clicked.connect(self.set_Enable_True)
@@ -192,6 +193,13 @@ class MainWindow(QWidget, Ui_Widget):
         self.wavelength_range.valueChanged.connect(lambda: self.change_range_spin(self.a1_2, self.a2_2, self.wavelength_range))
         self.a1_2.valueChanged.connect(lambda: self.change_range_slider2(self.a1_2, self.a2_2, self.wavelength_range, self.warning_range))
         self.a2_2.valueChanged.connect(lambda: self.change_range_slider(self.a1_2, self.a2_2, self.wavelength_range, self.warning_range))
+
+        ## Same wiring for the wavelength range on the 'Optical Fiber' configuration page.
+        ## These widgets used to share the same objectName as the ones above (a1_2/a2_2/wavelength_range),
+        ## so they were silently overwritten and never wired to anything - now renamed to *_fiber.
+        self.wavelength_range_fiber.valueChanged.connect(lambda: self.change_range_spin(self.a1_fiber, self.a2_fiber, self.wavelength_range_fiber))
+        self.a1_fiber.valueChanged.connect(lambda: self.change_range_slider2(self.a1_fiber, self.a2_fiber, self.wavelength_range_fiber, self.warning_range_fiber))
+        self.a2_fiber.valueChanged.connect(lambda: self.change_range_slider(self.a1_fiber, self.a2_fiber, self.wavelength_range_fiber, self.warning_range_fiber))
 
         ## Method that updates the incident angle range in AIM mode
         self.angular_range.valueChanged.connect(lambda: self.change_range_spin(self.a1_3, self.a2_3, self.angular_range))
@@ -1389,21 +1397,48 @@ class MainWindow(QWidget, Ui_Widget):
                                          "	height: 35;\n"
                                          "}")
 
-
     def set_RefractiveIndex_core(self, material, lambda_i):
-        if material == 0:
-            wi = lambda_i 
-            B1, B2, B3, C1, C2, C3, X, n, k_index = 0, 0, 0, 0, 0, 0, [], [], []  # Initialization of variables
-            Lambda_i = wi * 1e6  # Incidence Wavelength in micrometers
-            j = complex(0,1)
-            
-            B1, B2, B3, C1, C2, C3 = 0.6961663, 0.4079426, 0.8974794, 4.6791E-3, 1.35121E-2, 97.934003
 
-            n = sqrt(1 + ((B1 * Lambda_i ** 2) / (Lambda_i ** 2 - C1)) + ((B2 * Lambda_i ** 2) / (Lambda_i ** 2 - C2))
-                         + ((B3 * Lambda_i ** 2) / (Lambda_i ** 2 - C3)))
-        
-        self.real_part_index.setText(str(round(real(n), 5))) 
-        self.imaginary_part_index.setText(str(round(imag(n), 5)))
+        # Wavelength in micrometers
+        Lambda_i = lambda_i * 1e6
+
+        # Silica
+        if self.material[material] == 'Silica':
+            B1 = 0.6961663
+            B2 = 0.4079426
+            B3 = 0.8974794
+            C1 = 4.6791E-3
+            C2 = 1.35121E-2
+            C3 = 97.934003
+        # PMMA
+        elif self.material[material] == 'PMMA':
+            B1 = 1.1819
+            B2 = 0
+            B3 = 0
+            C1 = 0.011313
+            C2 = 0
+            C3 = 0
+        # CaF2
+        elif self.material[material] == 'CaF2':
+            B1 = 0.56759
+            B2 = 0.47134
+            B3 = 3.8485
+            C1 = 0.050264**2
+            C2 = 0.10026**2
+            C3 = 34.649**2
+        else:
+            B1 = float(self.a1.text().replace(',','.'))
+            B2 = float(self.a2.text().replace(',','.'))
+            B3 = float(self.a3.text().replace(',','.'))
+            C1 = float(self.b1.text().replace(',','.'))**2
+            C2 = float(self.b2.text().replace(',','.'))**2
+            C3 = float(self.b3.text().replace(',','.'))**2
+
+        n = sqrt(1 + (B1 * Lambda_i**2) / (Lambda_i**2 - C1) + (B2 * Lambda_i**2) / (Lambda_i**2 - C2) + (B3 * Lambda_i**2) / (Lambda_i**2 - C3))
+        self.real_part_index.setText(str(real(n)))
+        self.imaginary_part_index.setText(str(imag(n)))
+
+        return n
             
 
     def set_RefractiveIndex(self, material, lambda_i):
@@ -1466,7 +1501,7 @@ class MainWindow(QWidget, Ui_Widget):
                 n = sqrt(B1 + (B2 * Lambda_i ** 2) + (B3 / Lambda_i ** 2) + (C1 / Lambda_i ** 4) + (C2 / Lambda_i ** 6))
 
             # Metals
-            elif 11 <= material <= 16:
+            elif 13 <= material <= 16:
                 """
                 X - Wavelength in micrometers,
                 n - Real part of the refractive index e k_index - Imaginary part of the refractive index
@@ -1845,8 +1880,10 @@ class MainWindow(QWidget, Ui_Widget):
                 n = sqrt(e_dl)
 
 
-            self.real_part_index.setText(str(round(real(n), 5))) 
-            self.imaginary_part_index.setText(str(round(imag(n), 5))) 
+            #self.real_part_index.setText(str(round(real(n), 5))) 
+            #self.imaginary_part_index.setText(str(round(imag(n), 5))) 
+            self.real_part_index.setText(str(real(n)))
+            self.imaginary_part_index.setText(str(imag(n)))
 
     def add_core(self): #optical fiber
         self.material = list()
@@ -1854,13 +1891,16 @@ class MainWindow(QWidget, Ui_Widget):
         self.d = list()
         self.indexRef = list()
 
-        material = self.cbox_core_material.currentText()
+        if self.custom_btn.isChecked():
+            material = "Custom"
+        else:
+            material = self.cbox_core_material.currentText()
         thickness = "-"
         description = "Core"
         
         self.material.append(material)
         self.material_id.append(self.cbox_core_material.currentIndex())
-        self.d.append((self.D_fiber.value())*1e-6)
+        self.d.append(0) 
         self.indexRef.append(complex(0,0))
         
         self.layers.append({"material": material, "thickness": thickness, "refractiveIndex": '-', "description": description })
@@ -2529,6 +2569,7 @@ class MainWindow(QWidget, Ui_Widget):
         self.timer.start(self.timer_interval)
         
         self.Reflectance_ = []
+        self.Power_trans = []
         self.Resonance_Point = []
         self.sensibility = []
         self.critical_point = []
@@ -2544,6 +2585,8 @@ class MainWindow(QWidget, Ui_Widget):
             polarization = "TE"
         else:
             polarization = "TE+TM"
+
+        self.current_polarization = polarization
         
         self.init = time.perf_counter()
 
@@ -2670,9 +2713,9 @@ class MainWindow(QWidget, Ui_Widget):
     
     def calc_power_optical(self, pol):
         global STEP
-        STEP = 0.1*1E-9
-        a1 = self.a1_2.value()*1E-9
-        a2 = self.a2_2.value()*1E-9
+        STEP = 1*1E-9
+        a1 = self.a1_fiber.value()*1E-9
+        a2 = self.a2_fiber.value()*1E-9
         lambda_i = arange(a1, a2, STEP)
         n_aperture = self.N_A.value()
         d_core = self.D_fiber.value()*1E-6
@@ -2702,16 +2745,14 @@ class MainWindow(QWidget, Ui_Widget):
                 N = lambda theta2: L/(d_core*tan(theta2))
                 #f_source = lambda theta3, W: exp(-((theta3 - (pi/2))**2)/(2 * W**2))
                 if pol == "TM" or pol == "TE":
-                    r_p = lambda theta, lambda_i: self.Reflectance_OF(self.indexRef, theta, lambda_i, pol)
+                    r_p = lambda theta, lambda_i: self.Reflectance(self.indexRef, theta, lambda_i, pol)
                     f = lambda theta4, lambda_i4: f_source(theta4)*(r_p(theta4, lambda_i4)**N(theta4))
                 else:
-                    r_p_tm = lambda theta, lambda_i: self.Reflectance_OF(self.indexRef, theta, lambda_i, "TM")
-                    r_p_te = lambda theta, lambda_i: self.Reflectance_OF(self.indexRef, theta, lambda_i, "TE")
+                    r_p_tm = lambda theta, lambda_i: self.Reflectance(self.indexRef, theta, lambda_i, "TM")
+                    r_p_te = lambda theta, lambda_i: self.Reflectance(self.indexRef, theta, lambda_i, "TE")
                     r_p = lambda theta, lambda_i: (r_p_te(theta, lambda_i)**N(theta) + r_p_tm(theta, lambda_i)**N(theta))/2
                     f = lambda theta4, lambda_i4: f_source(theta4)*(r_p(theta4, lambda_i4))
 
-                
-                f = lambda theta4, lambda_i4: f_source(theta4)*(r_p(theta4, lambda_i4)**N(theta4))
                 b = lambda_i[t]
                 integral_num = quad(f, theta_c, pi/2, args=(b))[0]
                 integral_den = quad(f_source, theta_c, pi/2)[0] 
@@ -2778,51 +2819,7 @@ class MainWindow(QWidget, Ui_Widget):
             self.fom.append(abs(self.sensibility[s] / self.Fwhm[s]))
             self.da.append(1/self.Fwhm[s])
 
-    def Reflectance_OF(self, index, theta_i, wavelenght, pol):
-        j = complex(0, 1)  # Simplification for the complex number "j"
-        k0 = (2 * pi) / wavelenght  # Wave number
 
-        b = []  # b_j -> Phase shift in each layer
-        q = []  # q_j -> Optical Admittance 
-    
-
-        m_ = []  # M_j -> Transfer matrix between each layer - TM polarization
-    
-        for layer in range(self.nLayers):
-            #y = sqrt((index[layer] ** 2) - ((index[0] * sin(theta_i)) ** 2))
-            y = sqrt(1 - ((index[0]/index[layer])**2)*(sin(theta_i))**2)
-            Z0 = sqrt((4*pi*1E-7)/(8.85E-12))
-            b.append(k0 * index[layer] * self.d[layer] * y)
-            
-            if pol == 'TM':
-                #q.append(y / index[layer] ** 2)
-                q.append((Z0/index[layer])*y)
-            else:
-                #q.append(y)
-                q.append((index[layer]/Z0)*y)
-
-
-            # Total Transfer Matrix
-            if layer < (self.nLayers - 1):
-                m_.append(array([[cos(b[layer]), (-j / q[layer]) * sin(b[layer])],
-                                    [-j * q[layer] * sin(b[layer]), cos(b[layer])]]))
-
-        Mt_ = m_[0]  # Mt_ -> Total Transfer Matrix - TM polarization
-        for k in range(self.nLayers - 2):
-            Mt_ = Mt_ @ m_[k + 1]
-
-
-        num = (Mt_[0][0] + Mt_[0][1] * q[ self.nLayers - 1]) * q[0] - (
-                Mt_[1][0] + Mt_[1][1] * q[ self.nLayers - 1])
-        den = (Mt_[0][0] + Mt_[0][1] * q[ self.nLayers - 1]) * q[0] + (
-                Mt_[1][0] + Mt_[1][1] * q[ self.nLayers - 1])
-
-
-        r = num / den # 'r_'-> Fresnel reflection coefficient
-
-
-        return abs(r) ** 2 # Reflectance - TE or TM polarization    
-    
     def Reflectance(self, index, theta_i, wavelenght, pol):
         """ The numerical model is based on the attenuated total reflection method combined with the transfer matrix
             method for a multilayer system according to:
@@ -2840,7 +2837,11 @@ class MainWindow(QWidget, Ui_Widget):
         for layer in range(self.nLayers):
             y = sqrt((index[layer] ** 2) - ((index[0] * sin(theta_i)) ** 2))
 
-            b.append(k0 * self.d[layer] * y)
+            if layer == 0:
+                b.append(k0 * 0 * y)
+            else:
+                b.append(k0 * self.d[layer] * y)
+
             if pol == "TM":
                 q.append(y / index[layer] ** 2)
             else:
@@ -2861,9 +2862,10 @@ class MainWindow(QWidget, Ui_Widget):
 
         r = num / den # 'r'-> Fresnel reflection coefficient 
             
-        return float(abs(r) ** 2) # Reflectance
+        return abs(r) ** 2 # Reflectance
     
-    def show_graphs(self, pol):
+    def show_graphs(self, index=None):
+        pol = self.current_polarization
         graph = self.select_graphs.currentText()
         
         if INTERROGATION_MODE == 1:
@@ -2874,8 +2876,14 @@ class MainWindow(QWidget, Ui_Widget):
             self.ax_x =  theta_i* (180 / pi) 
             self.simbols = ("Angle", chr(952), "°")
         else:
-            a1 = self.a1_2.value()*1E-9
-            a2 = self.a2_2.value()*1E-9
+            # COUPLING == 1 -> WIM/prism page range (a1_2/a2_2)
+            # COUPLING == 2 -> Optical Fiber page range (a1_fiber/a2_fiber)
+            if COUPLING == 1:
+                a1 = self.a1_2.value()*1E-9
+                a2 = self.a2_2.value()*1E-9
+            else:
+                a1 = self.a1_fiber.value()*1E-9
+                a2 = self.a2_fiber.value()*1E-9
             lambda_i = arange(a1, a2, STEP)
 
             self.ax_x = lambda_i*1E9

@@ -1808,10 +1808,10 @@ class Ui_Widget(object):
         self.gridLayout_8.addWidget(self.custom_btn, 2, 0, 1, 1)
 
         self.cbox_core_material = QtWidgets.QComboBox(self.gb_core_material)
-        self.cbox_core_material.addItem("Silic")
+        self.cbox_core_material.addItem("Silica")
         self.cbox_core_material.addItem("PMMA")
         self.cbox_core_material.addItem("CaF2")
-        self.cbox_core_material.addItem("Fiber", ["Silic", "PMAA","CaF2" ])
+        self.cbox_core_material.addItem("Fiber", ["Silica", "PMAA","CaF2" ])
         self.cbox_core_material.setObjectName(u"cbox_core_material")
         self.cbox_core_material.setMinimumSize(QtCore.QSize(170, 0))
         self.cbox_core_material.setStyleSheet(u"QComboBox::drop-down {\n"
@@ -2473,7 +2473,7 @@ class Ui_Widget(object):
 
         self.cbox_material = QtWidgets.QComboBox(self.gb_layers)
         self.cbox_material.addItem("BK7")
-        self.cbox_material.addItem("Silic")
+        self.cbox_material.addItem("Silica")
         self.cbox_material.addItem("N-F2")
         self.cbox_material.addItem("Synthetic sapphire(Al2O3)")
         self.cbox_material.addItem("SF10")
@@ -3866,17 +3866,17 @@ class Ui_Widget(object):
         self.verticalLayout_23.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_23.setSpacing(0)
         self.verticalLayout_23.setObjectName("verticalLayout_23")
-        self.Spectral_range_2 = QtWidgets.QGroupBox(self.frame_12)
+        self.Spectral_range_fiber = QtWidgets.QGroupBox(self.frame_12)
         sizePolicy = QtWidgets.QSizePolicy(
             QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(
-            self.Spectral_range_2.sizePolicy().hasHeightForWidth())
-        self.Spectral_range_2.setSizePolicy(sizePolicy)
-        self.Spectral_range_2.setMaximumSize(QtCore.QSize(520, 150))
-        self.Spectral_range_2.setFont(font12)
-        self.Spectral_range_2.setStyleSheet("\n"
+            self.Spectral_range_fiber.sizePolicy().hasHeightForWidth())
+        self.Spectral_range_fiber.setSizePolicy(sizePolicy)
+        self.Spectral_range_fiber.setMaximumSize(QtCore.QSize(520, 150))
+        self.Spectral_range_fiber.setFont(font12)
+        self.Spectral_range_fiber.setStyleSheet("\n"
                                             "QGroupBox  {\n"
                                             "    font: 14pt \"Ubuntu\";\n"
                                             "    background-color: rgba(255, 255, 255,70);\n"
@@ -3896,43 +3896,43 @@ class Ui_Widget(object):
                                             "    color: rgb(255, 255, 255);\n"
                                             "}\n"
                                             "")
-        self.Spectral_range_2.setAlignment(
+        self.Spectral_range_fiber.setAlignment(
             QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
-        self.Spectral_range_2.setChecked(False)
-        self.Spectral_range_2.setObjectName("Spectral_range_2")
-        self.verticalLayout_24 = QtWidgets.QVBoxLayout(self.Spectral_range_2)
-        self.verticalLayout_24.setContentsMargins(0, 15, 0, 10)
-        self.verticalLayout_24.setSpacing(12)
-        self.verticalLayout_24.setObjectName("verticalLayout_24")
-        self.horizontalLayout_32 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_32.setSpacing(5)
-        self.horizontalLayout_32.setObjectName("horizontalLayout_32")
+        self.Spectral_range_fiber.setChecked(False)
+        self.Spectral_range_fiber.setObjectName("Spectral_range_fiber")
+        self.verticalLayout_24_fiber = QtWidgets.QVBoxLayout(self.Spectral_range_fiber)
+        self.verticalLayout_24_fiber.setContentsMargins(0, 15, 0, 10)
+        self.verticalLayout_24_fiber.setSpacing(12)
+        self.verticalLayout_24_fiber.setObjectName("verticalLayout_24_fiber")
+        self.horizontalLayout_32_fiber = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_32_fiber.setSpacing(5)
+        self.horizontalLayout_32_fiber.setObjectName("horizontalLayout_32_fiber")
         spacerItem52 = QtWidgets.QSpacerItem(
             20, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_32.addItem(spacerItem52)
-        self.label_23 = QtWidgets.QLabel(self.Spectral_range_2)
-        self.label_23.setMinimumSize(QtCore.QSize(50, 0))
-        self.label_23.setMaximumSize(QtCore.QSize(60, 25))
-        self.label_23.setFont(font12)
-        self.label_23.setLayoutDirection(QtCore.Qt.RightToLeft)
-        self.label_23.setStyleSheet("font: 14pt \"Ubuntu\";\n"
+        self.horizontalLayout_32_fiber.addItem(spacerItem52)
+        self.label_23_fiber = QtWidgets.QLabel(self.Spectral_range_fiber)
+        self.label_23_fiber.setMinimumSize(QtCore.QSize(50, 0))
+        self.label_23_fiber.setMaximumSize(QtCore.QSize(60, 25))
+        self.label_23_fiber.setFont(font12)
+        self.label_23_fiber.setLayoutDirection(QtCore.Qt.RightToLeft)
+        self.label_23_fiber.setStyleSheet("font: 14pt \"Ubuntu\";\n"
                                     "")
-        self.label_23.setAlignment(
+        self.label_23_fiber.setAlignment(
             QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
-        self.label_23.setObjectName("label_23")
-        self.horizontalLayout_32.addWidget(self.label_23)
-        self.a1_2 = QtWidgets.QDoubleSpinBox(self.Spectral_range_2)
+        self.label_23_fiber.setObjectName("label_23_fiber")
+        self.horizontalLayout_32_fiber.addWidget(self.label_23_fiber)
+        self.a1_fiber = QtWidgets.QDoubleSpinBox(self.Spectral_range_fiber)
         sizePolicy = QtWidgets.QSizePolicy(
             QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(
-            self.a1_2.sizePolicy().hasHeightForWidth())
-        self.a1_2.setSizePolicy(sizePolicy)
-        self.a1_2.setMinimumSize(QtCore.QSize(120, 30))
-        self.a1_2.setMaximumSize(QtCore.QSize(130, 35))
-        self.a1_2.setFont(font13)
-        self.a1_2.setStyleSheet("\n"
+            self.a1_fiber.sizePolicy().hasHeightForWidth())
+        self.a1_fiber.setSizePolicy(sizePolicy)
+        self.a1_fiber.setMinimumSize(QtCore.QSize(120, 30))
+        self.a1_fiber.setMaximumSize(QtCore.QSize(130, 35))
+        self.a1_fiber.setFont(font13)
+        self.a1_fiber.setStyleSheet("\n"
                                 "QDoubleSpinBox\n"
                                 "{\n"
                                 "color: rgb(10, 25, 90);\n"
@@ -3963,38 +3963,38 @@ class Ui_Widget(object):
                                 "    image: url(:/icons/icons/arrow-down.png);\n"
                                 "    width: 25;\n"
                                 "}")
-        self.a1_2.setAlignment(QtCore.Qt.AlignCenter)
-        self.a1_2.setAccelerated(True)
-        self.a1_2.setDecimals(1)
-        self.a1_2.setRange(0,3000)
-        self.a1_2.setSingleStep(0.1)
-        self.a1_2.setObjectName("a1_2")
-        self.horizontalLayout_32.addWidget(self.a1_2)
+        self.a1_fiber.setAlignment(QtCore.Qt.AlignCenter)
+        self.a1_fiber.setAccelerated(True)
+        self.a1_fiber.setDecimals(1)
+        self.a1_fiber.setRange(0,3000)
+        self.a1_fiber.setSingleStep(0.1)
+        self.a1_fiber.setObjectName("a1_fiber")
+        self.horizontalLayout_32_fiber.addWidget(self.a1_fiber)
         spacerItem53 = QtWidgets.QSpacerItem(
             20, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_32.addItem(spacerItem53)
-        self.label_24 = QtWidgets.QLabel(self.Spectral_range_2)
-        self.label_24.setMinimumSize(QtCore.QSize(50, 0))
-        self.label_24.setMaximumSize(QtCore.QSize(60, 25))
-        self.label_24.setFont(font12)
-        self.label_24.setLayoutDirection(QtCore.Qt.RightToLeft)
-        self.label_24.setStyleSheet("font: 14pt \"Ubuntu\";")
-        self.label_24.setAlignment(
+        self.horizontalLayout_32_fiber.addItem(spacerItem53)
+        self.label_24_fiber = QtWidgets.QLabel(self.Spectral_range_fiber)
+        self.label_24_fiber.setMinimumSize(QtCore.QSize(50, 0))
+        self.label_24_fiber.setMaximumSize(QtCore.QSize(60, 25))
+        self.label_24_fiber.setFont(font12)
+        self.label_24_fiber.setLayoutDirection(QtCore.Qt.RightToLeft)
+        self.label_24_fiber.setStyleSheet("font: 14pt \"Ubuntu\";")
+        self.label_24_fiber.setAlignment(
             QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
-        self.label_24.setObjectName("label_24")
-        self.horizontalLayout_32.addWidget(self.label_24)
-        self.a2_2 = QtWidgets.QDoubleSpinBox(self.Spectral_range_2)
+        self.label_24_fiber.setObjectName("label_24_fiber")
+        self.horizontalLayout_32_fiber.addWidget(self.label_24_fiber)
+        self.a2_fiber = QtWidgets.QDoubleSpinBox(self.Spectral_range_fiber)
         sizePolicy = QtWidgets.QSizePolicy(
             QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(
-            self.a2_2.sizePolicy().hasHeightForWidth())
-        self.a2_2.setSizePolicy(sizePolicy)
-        self.a2_2.setMinimumSize(QtCore.QSize(120, 30))
-        self.a2_2.setMaximumSize(QtCore.QSize(130, 35))
-        self.a2_2.setFont(font13)
-        self.a2_2.setStyleSheet("\n"
+            self.a2_fiber.sizePolicy().hasHeightForWidth())
+        self.a2_fiber.setSizePolicy(sizePolicy)
+        self.a2_fiber.setMinimumSize(QtCore.QSize(120, 30))
+        self.a2_fiber.setMaximumSize(QtCore.QSize(130, 35))
+        self.a2_fiber.setFont(font13)
+        self.a2_fiber.setStyleSheet("\n"
                                 "QDoubleSpinBox\n"
                                 "{\n"
                                 "color: rgb(10, 25, 90);\n"
@@ -4025,54 +4025,54 @@ class Ui_Widget(object):
                                 "    image: url(:/icons/icons/arrow-down.png);\n"
                                 "    width: 25;\n"
                                 "}")
-        self.a2_2.setAlignment(QtCore.Qt.AlignCenter)
-        self.a2_2.setButtonSymbols(QtWidgets.QAbstractSpinBox.UpDownArrows)
-        self.a2_2.setAccelerated(True)
-        self.a2_2.setDecimals(1)
-        self.a2_2.setRange(0,3000)
-        self.a2_2.setSingleStep(0.1)
-        self.a2_2.setObjectName("a2_2")
-        self.horizontalLayout_32.addWidget(self.a2_2)
+        self.a2_fiber.setAlignment(QtCore.Qt.AlignCenter)
+        self.a2_fiber.setButtonSymbols(QtWidgets.QAbstractSpinBox.UpDownArrows)
+        self.a2_fiber.setAccelerated(True)
+        self.a2_fiber.setDecimals(1)
+        self.a2_fiber.setRange(0,3000)
+        self.a2_fiber.setSingleStep(0.1)
+        self.a2_fiber.setObjectName("a2_fiber")
+        self.horizontalLayout_32_fiber.addWidget(self.a2_fiber)
         spacerItem54 = QtWidgets.QSpacerItem(
             20, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_32.addItem(spacerItem54)
-        self.verticalLayout_24.addLayout(self.horizontalLayout_32)
-        self.horizontalLayout_33 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_33.setObjectName("horizontalLayout_33")
+        self.horizontalLayout_32_fiber.addItem(spacerItem54)
+        self.verticalLayout_24_fiber.addLayout(self.horizontalLayout_32_fiber)
+        self.horizontalLayout_33_fiber = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_33_fiber.setObjectName("horizontalLayout_33_fiber")
         spacerItem55 = QtWidgets.QSpacerItem(
             40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_33.addItem(spacerItem55)
+        self.horizontalLayout_33_fiber.addItem(spacerItem55)
         
-        self.wavelength_range = QDoubleRangeSlider(QtCore.Qt.Horizontal)
-        self.wavelength_range.setMinimumSize(QtCore.QSize(300, 25))
-        self.wavelength_range.setMaximumSize(QtCore.QSize(16777215, 25))
-        self.wavelength_range.setRange(0, 3000)
-        self.wavelength_range.setSingleStep(1)
-        self.wavelength_range.setValue((400, 1000))
-        self.wavelength_range.setStyleSheet(QSS)
-        self.horizontalLayout_33.addWidget(self.wavelength_range)
+        self.wavelength_range_fiber = QDoubleRangeSlider(QtCore.Qt.Horizontal)
+        self.wavelength_range_fiber.setMinimumSize(QtCore.QSize(300, 25))
+        self.wavelength_range_fiber.setMaximumSize(QtCore.QSize(16777215, 25))
+        self.wavelength_range_fiber.setRange(0, 3000)
+        self.wavelength_range_fiber.setSingleStep(1)
+        self.wavelength_range_fiber.setValue((400, 1000))
+        self.wavelength_range_fiber.setStyleSheet(QSS)
+        self.horizontalLayout_33_fiber.addWidget(self.wavelength_range_fiber)
 
-        self.a1_2.setValue(float(self.wavelength_range.value()[0]))
-        self.a2_2.setValue(float(self.wavelength_range.value()[1]))
+        self.a1_fiber.setValue(float(self.wavelength_range_fiber.value()[0]))
+        self.a2_fiber.setValue(float(self.wavelength_range_fiber.value()[1]))
 
         spacerItem56 = QtWidgets.QSpacerItem(
             40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_33.addItem(spacerItem56)
-        self.verticalLayout_24.addLayout(self.horizontalLayout_33)
+        self.horizontalLayout_33_fiber.addItem(spacerItem56)
+        self.verticalLayout_24_fiber.addLayout(self.horizontalLayout_33_fiber)
 
-        self.warning_range = QtWidgets.QLabel(self.Spectral_range_2)
-        self.warning_range.setObjectName(u"warning_range")
-        self.warning_range.setHidden(True)
-        self.warning_range.setMaximumSize(QtCore.QSize(16777215, 35))
-        self.warning_range.setStyleSheet(u"font: 11pt \"Ubuntu\";")
+        self.warning_range_fiber = QtWidgets.QLabel(self.Spectral_range_fiber)
+        self.warning_range_fiber.setObjectName(u"warning_range_fiber")
+        self.warning_range_fiber.setHidden(True)
+        self.warning_range_fiber.setMaximumSize(QtCore.QSize(16777215, 35))
+        self.warning_range_fiber.setStyleSheet(u"font: 11pt \"Ubuntu\";")
 
-        self.verticalLayout_24.addWidget(self.warning_range)
+        self.verticalLayout_24_fiber.addWidget(self.warning_range_fiber)
 
-        self.verticalLayout_23.addWidget(self.Spectral_range_2)
+        self.verticalLayout_23.addWidget(self.Spectral_range_fiber)
         spacerItem57 = QtWidgets.QSpacerItem(
             20, 10, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
         self.verticalLayout_23.addItem(spacerItem57)
-        self.Spectral_range_2.setTitle(
+        self.Spectral_range_fiber.setTitle(
             QtCore.QCoreApplication.translate("Widget", u"Spectral range", None))
         """self.wavelength_incident_2 = QtWidgets.QGroupBox(self.frame_12)
         self.wavelength_incident_2.setMinimumSize(QtCore.QSize(510, 80))
@@ -5394,9 +5394,9 @@ class Ui_Widget(object):
         self.characteristics_fiber_group.setTitle(_translate("Widget", u"Characteristics", None))
         self.L_fiber.setSuffix(_translate("Widget", u" mm", None))
         self.label_5.setText(_translate("Widget", u"<html><head/><body><p><span style=\" color:#ffffff;\">Numerical Aperture (NA): </span></p></body></html>", None))
-        self.label_42.setText(_translate("Widget", u"<html><head/><body><p><span style=\" color:#ffffff;\"> Detection region length (L):</span></p></body></html>", None))
+        self.label_42.setText(_translate("Widget", u"<html><head/><body><p><span style=\" color:#ffffff;\"> Detection region length (L): </span></p></body></html>", None))
         self.D_fiber.setSuffix(_translate("Widget", u" um", None))
-        self.label_43.setText(_translate("Widget", u"<html><head/><body><p><span style=\" color:#ffffff;\">Core diameter (D):</span></p></body></html>", None))
+        self.label_43.setText(_translate("Widget", u"<html><head/><body><p><span style=\" color:#ffffff;\">Core diameter (D): </span></p></body></html>", None))
         self.gb_core_material.setTitle(_translate("Widget", u"Core Material", None))
         self.label_28.setText(_translate("Widget", u"<html><head/><body><p><span style=\" color:#ffffff;\">Material:</span></p></body></html>", None))
         self.custom_btn.setText(_translate("Widget", u"Custom", None))
@@ -5545,6 +5545,19 @@ class Ui_Widget(object):
         self.a2_2.setSuffix(_translate("Widget", u"nm", None))
         
         self.warning_range.setText(_translate("Widget", u"<html><head/><body><p align=\"center\"><span style=\" font-weight:500; color:#d41010;\">Starting value greater than the ending value in the range. Check!</span></p></body></html>", None))
+
+        # Widgets equivalentes da página "Optical Fiber" (antes órfãos, pois eram sobrescritos
+        # pelos widgets acima da página WIM devido ao objectName duplicado).
+        self.Spectral_range_fiber.setTitle(
+            _translate("Widget", u"Spectral range", None))
+        self.label_23_fiber.setText(_translate(
+            "Widget", u"<html><head/><body><p><span style=\" color:#ffffff;\">Initial:</span></p></body></html>", None))
+        self.a1_fiber.setSuffix(_translate("Widget", u" nm", None))
+        self.label_24_fiber.setText(_translate(
+            "Widget", u"<html><head/><body><p><span style=\" color:#ffffff;\">Final: </span></p></body></html>", None))
+        self.a2_fiber.setSuffix(_translate("Widget", u"nm", None))
+
+        self.warning_range_fiber.setText(_translate("Widget", u"<html><head/><body><p align=\"center\"><span style=\" font-weight:500; color:#d41010;\">Starting value greater than the ending value in the range. Check!</span></p></body></html>", None))
         
         self.label_warning.setText(_translate(
             "Widget", u"<html><head/><body><p><span style=\" font-weight:500; color:#ffff01;\">- Check the chosen range -</span></p></body></html>", None))

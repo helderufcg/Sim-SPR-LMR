@@ -1235,7 +1235,7 @@ class Ui_Widget(object):
         self.a1_4.setAccelerated(True)
         self.a1_4.setDecimals(1)
         self.a1_4.setMinimum(400.0)
-        self.a1_4.setMaximum(1800.0)
+        self.a1_4.setMaximum(3000.0)
         self.a1_4.setSingleStep(0.1)
         self.a1_4.setObjectName("a1_4")
         self.horizontalLayout_50.addWidget(self.a1_4)
