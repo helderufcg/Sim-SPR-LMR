@@ -1,0 +1,1808 @@
+{
+  "Cenario_ITO_Silver_ITO": {
+    "simulator": "LMR+SPR",
+    "coupling": "Fiber",
+    "interrogation_mode": "WIM",
+    "layers": [
+      {
+        "material": "ITO",
+        "thickness": "50",
+        "refractiveIndex": "-",
+        "description": "",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Silver",
+        "thickness": "25",
+        "refractiveIndex": "-",
+        "description": "",
+        "dispersionModel": "drude",
+        "drudeLambdaP": "0.14541",
+        "drudeLambdaC": "17.614"
+      },
+      {
+        "material": "ITO",
+        "thickness": "50",
+        "refractiveIndex": "-",
+        "description": "",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Analyte",
+        "thickness": "1000",
+        "refractiveIndex": "1.33 - 1.34",
+        "description": ""
+      }
+    ],
+    "material_names": [
+      "ITO",
+      "Silver",
+      "ITO",
+      "Analyte"
+    ],
+    "material_ids": [
+      24,
+      12,
+      24,
+      19
+    ],
+    "thicknesses_m": [
+      5.0000000000000004e-08,
+      2.5000000000000002e-08,
+      5.0000000000000004e-08,
+      1.0000000000000002e-06
+    ],
+    "refractive_indices": [
+      {
+        "real": 0.0,
+        "imag": 0.0
+      },
+      {
+        "real": 0.0,
+        "imag": 0.0
+      },
+      {
+        "real": 0.0,
+        "imag": 0.0
+      },
+      {
+        "real": 1.33,
+        "imag": 0.0
+      }
+    ],
+    "analyte_indices": [
+      {
+        "real": 1.33,
+        "imag": 0.0
+      },
+      {
+        "real": 1.34,
+        "imag": 0.0
+      }
+    ]
+  },
+  "Cenario1_TE_Otimizada": {
+    "simulator": "LMR",
+    "coupling": "Prism",
+    "interrogation_mode": "AIM",
+    "layers": [
+      {
+        "material": "Custom",
+        "thickness": "500",
+        "refractiveIndex": " 1.517+0j ",
+        "description": "Bk7",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Custom",
+        "thickness": "200.46",
+        "refractiveIndex": " 1.391+0j ",
+        "description": "LiF",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Custom",
+        "thickness": "132.53",
+        "refractiveIndex": " 1.71749+0.00661j ",
+        "description": "ZnO",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Analyte",
+        "thickness": "500",
+        "refractiveIndex": "1.4201 - 1.4301",
+        "description": ""
+      }
+    ],
+    "material_names": [
+      "Custom",
+      "Custom",
+      "Custom",
+      "Analyte"
+    ],
+    "material_ids": [
+      23,
+      23,
+      23,
+      19
+    ],
+    "thicknesses_m": [
+      5.000000000000001e-07,
+      2.0046e-07,
+      1.3253e-07,
+      5.000000000000001e-07
+    ],
+    "refractive_indices": [
+      {
+        "real": 1.517,
+        "imag": 0.0
+      },
+      {
+        "real": 1.391,
+        "imag": 0.0
+      },
+      {
+        "real": 1.71749,
+        "imag": 0.00661
+      },
+      {
+        "real": 1.4201,
+        "imag": 0.0
+      }
+    ],
+    "analyte_indices": [
+      {
+        "real": 1.4201,
+        "imag": 0.0
+      },
+      {
+        "real": 1.4301,
+        "imag": 0.0
+      }
+    ]
+  },
+  "Cenario1_TE_Original": {
+    "simulator": "LMR",
+    "coupling": "Prism",
+    "interrogation_mode": "AIM",
+    "layers": [
+      {
+        "material": "Custom",
+        "thickness": "500",
+        "refractiveIndex": " 1.517+0j ",
+        "description": "ZnO",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Custom",
+        "thickness": "400",
+        "refractiveIndex": " 1.391+0j ",
+        "description": "LiF",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Custom",
+        "thickness": "100",
+        "refractiveIndex": " 1.71749+0.00661j ",
+        "description": "ZnO",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Analyte",
+        "thickness": "500",
+        "refractiveIndex": "1.4201 - 1.4301",
+        "description": ""
+      }
+    ],
+    "material_names": [
+      "Custom",
+      "Custom",
+      "Custom",
+      "Analyte"
+    ],
+    "material_ids": [
+      23,
+      23,
+      23,
+      19
+    ],
+    "thicknesses_m": [
+      5.000000000000001e-07,
+      4.0000000000000003e-07,
+      1.0000000000000001e-07,
+      5.000000000000001e-07
+    ],
+    "refractive_indices": [
+      {
+        "real": 1.517,
+        "imag": 0.0
+      },
+      {
+        "real": 1.391,
+        "imag": 0.0
+      },
+      {
+        "real": 1.71749,
+        "imag": 0.00661
+      },
+      {
+        "real": 1.4201,
+        "imag": 0.0
+      }
+    ],
+    "analyte_indices": [
+      {
+        "real": 1.4201,
+        "imag": 0.0
+      },
+      {
+        "real": 1.4301,
+        "imag": 0.0
+      }
+    ]
+  },
+  "Cenario1_TM_Otimizada": {
+    "simulator": "LMR",
+    "coupling": "Prism",
+    "interrogation_mode": "AIM",
+    "layers": [
+      {
+        "material": "Custom",
+        "thickness": "500",
+        "refractiveIndex": " 1.517+0j ",
+        "description": "ZnO",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Custom",
+        "thickness": "204.91",
+        "refractiveIndex": " 1.391+0j ",
+        "description": "LiF",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Custom",
+        "thickness": "179.05",
+        "refractiveIndex": " 1.71749+0.00661j ",
+        "description": "ZnO",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Analyte",
+        "thickness": "500",
+        "refractiveIndex": "1.4201 - 1.4301",
+        "description": ""
+      }
+    ],
+    "material_names": [
+      "Custom",
+      "Custom",
+      "Custom",
+      "Analyte"
+    ],
+    "material_ids": [
+      23,
+      23,
+      23,
+      19
+    ],
+    "thicknesses_m": [
+      5.000000000000001e-07,
+      2.0491e-07,
+      1.7905000000000003e-07,
+      5.000000000000001e-07
+    ],
+    "refractive_indices": [
+      {
+        "real": 1.517,
+        "imag": 0.0
+      },
+      {
+        "real": 1.391,
+        "imag": 0.0
+      },
+      {
+        "real": 1.71749,
+        "imag": 0.00661
+      },
+      {
+        "real": 1.4201,
+        "imag": 0.0
+      }
+    ],
+    "analyte_indices": [
+      {
+        "real": 1.4201,
+        "imag": 0.0
+      },
+      {
+        "real": 1.4301,
+        "imag": 0.0
+      }
+    ]
+  },
+  "Cenario2_TE_Original": {
+    "simulator": "LMR",
+    "coupling": "Prism",
+    "interrogation_mode": "AIM",
+    "layers": [
+      {
+        "material": "Custom",
+        "thickness": "500",
+        "refractiveIndex": " 1.5151+0j ",
+        "description": "bk7",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Custom",
+        "thickness": "300",
+        "refractiveIndex": " 1.391+0j ",
+        "description": "LiF",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Custom",
+        "thickness": "40",
+        "refractiveIndex": " 1.97694+0.04996j ",
+        "description": "TiO2",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Analyte",
+        "thickness": "500",
+        "refractiveIndex": "1.33 - 1.34",
+        "description": ""
+      }
+    ],
+    "material_names": [
+      "Custom",
+      "Custom",
+      "Custom",
+      "Analyte"
+    ],
+    "material_ids": [
+      23,
+      23,
+      23,
+      19
+    ],
+    "thicknesses_m": [
+      5.000000000000001e-07,
+      3.0000000000000004e-07,
+      4e-08,
+      5.000000000000001e-07
+    ],
+    "refractive_indices": [
+      {
+        "real": 1.5151,
+        "imag": 0.0
+      },
+      {
+        "real": 1.391,
+        "imag": 0.0
+      },
+      {
+        "real": 1.97694,
+        "imag": 0.04996
+      },
+      {
+        "real": 1.33,
+        "imag": 0.0
+      }
+    ],
+    "analyte_indices": [
+      {
+        "real": 1.33,
+        "imag": 0.0
+      },
+      {
+        "real": 1.34,
+        "imag": 0.0
+      }
+    ]
+  },
+  "Cenario2_TE_Otimizada": {
+    "simulator": "LMR",
+    "coupling": "Prism",
+    "interrogation_mode": "AIM",
+    "layers": [
+      {
+        "material": "Custom",
+        "thickness": "500",
+        "refractiveIndex": " 1.5151+0j ",
+        "description": "bk7",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Custom",
+        "thickness": "119.99",
+        "refractiveIndex": " 1.391+0j ",
+        "description": "LiF",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Custom",
+        "thickness": "42.31",
+        "refractiveIndex": " 1.97694+0.04996j ",
+        "description": "TiO2",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Analyte",
+        "thickness": "500",
+        "refractiveIndex": "1.39 - 1.45",
+        "description": ""
+      }
+    ],
+    "material_names": [
+      "Custom",
+      "Custom",
+      "Custom",
+      "Analyte"
+    ],
+    "material_ids": [
+      23,
+      23,
+      23,
+      19
+    ],
+    "thicknesses_m": [
+      5.000000000000001e-07,
+      1.1999e-07,
+      4.2310000000000006e-08,
+      5.000000000000001e-07
+    ],
+    "refractive_indices": [
+      {
+        "real": 1.5151,
+        "imag": 0.0
+      },
+      {
+        "real": 1.391,
+        "imag": 0.0
+      },
+      {
+        "real": 1.97694,
+        "imag": 0.04996
+      },
+      {
+        "real": 1.39,
+        "imag": 0.0
+      }
+    ],
+    "analyte_indices": [
+      {
+        "real": 1.39,
+        "imag": 0.0
+      },
+      {
+        "real": 1.45,
+        "imag": 0.0
+      }
+    ]
+  },
+  "Cenario2_TM_Original": {
+    "simulator": "LMR",
+    "coupling": "Prism",
+    "interrogation_mode": "AIM",
+    "layers": [
+      {
+        "material": "Custom",
+        "thickness": "500",
+        "refractiveIndex": " 1.5151+0j ",
+        "description": "bk7",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Custom",
+        "thickness": "500",
+        "refractiveIndex": " 1.391+0j ",
+        "description": "LiF",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Custom",
+        "thickness": "60",
+        "refractiveIndex": " 1.97694+0.04996j ",
+        "description": "TiO2",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Analyte",
+        "thickness": "500",
+        "refractiveIndex": "1.39 - 1.45",
+        "description": ""
+      }
+    ],
+    "material_names": [
+      "Custom",
+      "Custom",
+      "Custom",
+      "Analyte"
+    ],
+    "material_ids": [
+      23,
+      23,
+      23,
+      19
+    ],
+    "thicknesses_m": [
+      5.000000000000001e-07,
+      5.000000000000001e-07,
+      6.000000000000001e-08,
+      5.000000000000001e-07
+    ],
+    "refractive_indices": [
+      {
+        "real": 1.5151,
+        "imag": 0.0
+      },
+      {
+        "real": 1.391,
+        "imag": 0.0
+      },
+      {
+        "real": 1.97694,
+        "imag": 0.04996
+      },
+      {
+        "real": 1.39,
+        "imag": 0.0
+      }
+    ],
+    "analyte_indices": [
+      {
+        "real": 1.39,
+        "imag": 0.0
+      },
+      {
+        "real": 1.45,
+        "imag": 0.0
+      }
+    ]
+  },
+  "Cenario2_TM_Otimizada": {
+    "simulator": "LMR",
+    "coupling": "Prism",
+    "interrogation_mode": "AIM",
+    "layers": [
+      {
+        "material": "Custom",
+        "thickness": "500",
+        "refractiveIndex": " 1.5151+0j ",
+        "description": "bk7",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Custom",
+        "thickness": "155.90",
+        "refractiveIndex": " 1.391+0j ",
+        "description": "LiF",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Custom",
+        "thickness": "89.51",
+        "refractiveIndex": " 1.97694+0.04996j ",
+        "description": "TiO2",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Analyte",
+        "thickness": "500",
+        "refractiveIndex": "1.383 - 1.443",
+        "description": ""
+      }
+    ],
+    "material_names": [
+      "Custom",
+      "Custom",
+      "Custom",
+      "Analyte"
+    ],
+    "material_ids": [
+      23,
+      23,
+      23,
+      19
+    ],
+    "thicknesses_m": [
+      5.000000000000001e-07,
+      1.559e-07,
+      8.951000000000001e-08,
+      5.000000000000001e-07
+    ],
+    "refractive_indices": [
+      {
+        "real": 1.5151,
+        "imag": 0.0
+      },
+      {
+        "real": 1.391,
+        "imag": 0.0
+      },
+      {
+        "real": 1.97694,
+        "imag": 0.04996
+      },
+      {
+        "real": 1.383,
+        "imag": 0.0
+      }
+    ],
+    "analyte_indices": [
+      {
+        "real": 1.383,
+        "imag": 0.0
+      },
+      {
+        "real": 1.443,
+        "imag": 0.0
+      }
+    ]
+  },
+  "Cenario3_TE_Original": {
+    "simulator": "LMR",
+    "coupling": "Prism",
+    "interrogation_mode": "AIM",
+    "layers": [
+      {
+        "material": "Custom",
+        "thickness": "500",
+        "refractiveIndex": " 1.5139+0j ",
+        "description": "bk7",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Custom",
+        "thickness": "200",
+        "refractiveIndex": " 1.3393+0j ",
+        "description": "LiF",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Custom",
+        "thickness": "3.25",
+        "refractiveIndex": " 5.0805+1.1723j ",
+        "description": "TiO2",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Analyte",
+        "thickness": "500",
+        "refractiveIndex": "1.357 - 1.367",
+        "description": ""
+      }
+    ],
+    "material_names": [
+      "Custom",
+      "Custom",
+      "Custom",
+      "Analyte"
+    ],
+    "material_ids": [
+      23,
+      23,
+      23,
+      19
+    ],
+    "thicknesses_m": [
+      5.000000000000001e-07,
+      2.0000000000000002e-07,
+      3.25e-09,
+      5.000000000000001e-07
+    ],
+    "refractive_indices": [
+      {
+        "real": 1.5139,
+        "imag": 0.0
+      },
+      {
+        "real": 1.3393,
+        "imag": 0.0
+      },
+      {
+        "real": 5.0805,
+        "imag": 1.1723
+      },
+      {
+        "real": 1.357,
+        "imag": 0.0
+      }
+    ],
+    "analyte_indices": [
+      {
+        "real": 1.357,
+        "imag": 0.0
+      },
+      {
+        "real": 1.367,
+        "imag": 0.0
+      }
+    ]
+  },
+  "Cenario3_TE_Otimizada": {
+    "simulator": "LMR",
+    "coupling": "Prism",
+    "interrogation_mode": "AIM",
+    "layers": [
+      {
+        "material": "Custom",
+        "thickness": "500",
+        "refractiveIndex": " 1.5139+0j ",
+        "description": "bk7",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Custom",
+        "thickness": "258.68",
+        "refractiveIndex": " 1.3393+0j ",
+        "description": "LiF",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Custom",
+        "thickness": "2.69",
+        "refractiveIndex": " 5.0805+1.1723j ",
+        "description": "TiO2",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Analyte",
+        "thickness": "500",
+        "refractiveIndex": "1.357 - 1.367",
+        "description": ""
+      }
+    ],
+    "material_names": [
+      "Custom",
+      "Custom",
+      "Custom",
+      "Analyte"
+    ],
+    "material_ids": [
+      23,
+      23,
+      23,
+      19
+    ],
+    "thicknesses_m": [
+      5.000000000000001e-07,
+      2.5868000000000004e-07,
+      2.69e-09,
+      5.000000000000001e-07
+    ],
+    "refractive_indices": [
+      {
+        "real": 1.5139,
+        "imag": 0.0
+      },
+      {
+        "real": 1.3393,
+        "imag": 0.0
+      },
+      {
+        "real": 5.0805,
+        "imag": 1.1723
+      },
+      {
+        "real": 1.357,
+        "imag": 0.0
+      }
+    ],
+    "analyte_indices": [
+      {
+        "real": 1.357,
+        "imag": 0.0
+      },
+      {
+        "real": 1.367,
+        "imag": 0.0
+      }
+    ]
+  },
+  "Cenario3_TM_Original": {
+    "simulator": "LMR",
+    "coupling": "Prism",
+    "interrogation_mode": "AIM",
+    "layers": [
+      {
+        "material": "Custom",
+        "thickness": "500",
+        "refractiveIndex": " 1.5139+0j ",
+        "description": "bk7",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Custom",
+        "thickness": "1000",
+        "refractiveIndex": " 1.3393+0j ",
+        "description": "LiF",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Custom",
+        "thickness": "19.50",
+        "refractiveIndex": " 5.0805+1.1723j ",
+        "description": "TiO2",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Analyte",
+        "thickness": "500",
+        "refractiveIndex": "1.357 - 1.367",
+        "description": ""
+      }
+    ],
+    "material_names": [
+      "Custom",
+      "Custom",
+      "Custom",
+      "Analyte"
+    ],
+    "material_ids": [
+      23,
+      23,
+      23,
+      19
+    ],
+    "thicknesses_m": [
+      5.000000000000001e-07,
+      1.0000000000000002e-06,
+      1.9500000000000003e-08,
+      5.000000000000001e-07
+    ],
+    "refractive_indices": [
+      {
+        "real": 1.5139,
+        "imag": 0.0
+      },
+      {
+        "real": 1.3393,
+        "imag": 0.0
+      },
+      {
+        "real": 5.0805,
+        "imag": 1.1723
+      },
+      {
+        "real": 1.357,
+        "imag": 0.0
+      }
+    ],
+    "analyte_indices": [
+      {
+        "real": 1.357,
+        "imag": 0.0
+      },
+      {
+        "real": 1.367,
+        "imag": 0.0
+      }
+    ]
+  },
+  "Rastogi_2022": {
+    "simulator": "SPR",
+    "coupling": "Prism",
+    "interrogation_mode": "AIM",
+    "layers": [
+      {
+        "material": "SF10",
+        "thickness": "1000",
+        "refractiveIndex": " 1.72312+0j ",
+        "description": "",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Gold",
+        "thickness": "52",
+        "refractiveIndex": " 0.18344+3.43324j ",
+        "description": "",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Custom",
+        "thickness": "1.02",
+        "refractiveIndex": " 2.7304+1.3558j ",
+        "description": "",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Analyte",
+        "thickness": "1000",
+        "refractiveIndex": "1.33 - 1.335",
+        "description": ""
+      }
+    ],
+    "material_names": [
+      "SF10",
+      "Gold",
+      "Custom",
+      "Analyte"
+    ],
+    "material_ids": [
+      4,
+      11,
+      23,
+      19
+    ],
+    "thicknesses_m": [
+      1.0000000000000002e-06,
+      5.2e-08,
+      1.02e-09,
+      1.0000000000000002e-06
+    ],
+    "refractive_indices": [
+      {
+        "real": 1.72312,
+        "imag": 0.0
+      },
+      {
+        "real": 0.18344,
+        "imag": 3.43324
+      },
+      {
+        "real": 2.7304,
+        "imag": 1.3558
+      },
+      {
+        "real": 1.33,
+        "imag": 0.0
+      }
+    ],
+    "analyte_indices": [
+      {
+        "real": 1.33,
+        "imag": 0.0
+      },
+      {
+        "real": 1.335,
+        "imag": 0.0
+      }
+    ]
+  },
+  "Cenario1_TM_Original": {
+    "simulator": "LMR",
+    "coupling": "Prism",
+    "interrogation_mode": "AIM",
+    "layers": [
+      {
+        "material": "Custom",
+        "thickness": "500",
+        "refractiveIndex": " 1.517+0j ",
+        "description": "ZnO",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Custom",
+        "thickness": "400",
+        "refractiveIndex": " 1.391+0j ",
+        "description": "LiF",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Custom",
+        "thickness": "130",
+        "refractiveIndex": " 1.71749+0.00661j ",
+        "description": "ZnO",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Analyte",
+        "thickness": "500",
+        "refractiveIndex": "1.42 - 1.45",
+        "description": ""
+      }
+    ],
+    "material_names": [
+      "Custom",
+      "Custom",
+      "Custom",
+      "Analyte"
+    ],
+    "material_ids": [
+      23,
+      23,
+      23,
+      19
+    ],
+    "thicknesses_m": [
+      5.000000000000001e-07,
+      4.0000000000000003e-07,
+      1.3e-07,
+      5.000000000000001e-07
+    ],
+    "refractive_indices": [
+      {
+        "real": 1.517,
+        "imag": 0.0
+      },
+      {
+        "real": 1.391,
+        "imag": 0.0
+      },
+      {
+        "real": 1.71749,
+        "imag": 0.00661
+      },
+      {
+        "real": 1.42,
+        "imag": 0.0
+      }
+    ],
+    "analyte_indices": [
+      {
+        "real": 1.42,
+        "imag": 0.0
+      },
+      {
+        "real": 1.45,
+        "imag": 0.0
+      }
+    ]
+  },
+  "Cenario1_Prisma": {
+    "simulator": "LMR+SPR",
+    "coupling": "Prism",
+    "interrogation_mode": "WIM",
+    "layers": [
+      {
+        "material": "Silica",
+        "thickness": "1000",
+        "refractiveIndex": "-",
+        "description": "",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "ITO",
+        "thickness": "100",
+        "refractiveIndex": "-",
+        "description": "",
+        "dispersionModel": "drude-lorentz",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Analyte",
+        "thickness": "1000",
+        "refractiveIndex": "1.321 - 1.331",
+        "description": ""
+      }
+    ],
+    "material_names": [
+      "Silica",
+      "ITO",
+      "Analyte"
+    ],
+    "material_ids": [
+      1,
+      24,
+      19
+    ],
+    "thicknesses_m": [
+      1.0000000000000002e-06,
+      1.0000000000000001e-07,
+      1.0000000000000002e-06
+    ],
+    "refractive_indices": [
+      {
+        "real": 0.0,
+        "imag": 0.0
+      },
+      {
+        "real": 0.0,
+        "imag": 0.0
+      },
+      {
+        "real": 1.321,
+        "imag": 0.0
+      }
+    ],
+    "analyte_indices": [
+      {
+        "real": 1.321,
+        "imag": 0.0
+      },
+      {
+        "real": 1.331,
+        "imag": 0.0
+      }
+    ]
+  },
+  "Cenario2_Fibra_Mult": {
+    "simulator": "LMR+SPR",
+    "coupling": "Fiber",
+    "interrogation_mode": "WIM",
+    "layers": [
+      {
+        "material": "ITO",
+        "thickness": "80",
+        "refractiveIndex": "-",
+        "description": "",
+        "dispersionModel": "drude",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Silver",
+        "thickness": "40",
+        "refractiveIndex": "-",
+        "description": "",
+        "dispersionModel": "drude",
+        "drudeLambdaP": "0.14541",
+        "drudeLambdaC": "17.614"
+      },
+      {
+        "material": "Analyte",
+        "thickness": "1000",
+        "refractiveIndex": "1.33 - 1.34",
+        "description": ""
+      }
+    ],
+    "material_names": [
+      "ITO",
+      "Silver",
+      "Analyte"
+    ],
+    "material_ids": [
+      24,
+      12,
+      19
+    ],
+    "thicknesses_m": [
+      8e-08,
+      4e-08,
+      1.0000000000000002e-06
+    ],
+    "refractive_indices": [
+      {
+        "real": 0.0,
+        "imag": 0.0
+      },
+      {
+        "real": 0.0,
+        "imag": 0.0
+      },
+      {
+        "real": 1.33,
+        "imag": 0.0
+      }
+    ],
+    "analyte_indices": [
+      {
+        "real": 1.33,
+        "imag": 0.0
+      },
+      {
+        "real": 1.34,
+        "imag": 0.0
+      }
+    ]
+  },
+  "Cenario3_Fibra_Mult": {
+    "simulator": "LMR+SPR",
+    "coupling": "Fiber",
+    "interrogation_mode": "WIM",
+    "layers": [
+      {
+        "material": "ITO",
+        "thickness": "40",
+        "refractiveIndex": "-",
+        "description": "",
+        "dispersionModel": "drude",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Silicon",
+        "thickness": "47",
+        "refractiveIndex": "-",
+        "description": "",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "SWCNT",
+        "thickness": "4",
+        "refractiveIndex": "-",
+        "description": "",
+        "dispersionModel": "drude-lorentz",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Analyte",
+        "thickness": "1000",
+        "refractiveIndex": "1.33 - 1.335",
+        "description": ""
+      }
+    ],
+    "material_names": [
+      "ITO",
+      "Silicon",
+      "SWCNT",
+      "Analyte"
+    ],
+    "material_ids": [
+      24,
+      25,
+      26,
+      19
+    ],
+    "thicknesses_m": [
+      4e-08,
+      4.7000000000000004e-08,
+      4e-09,
+      1.0000000000000002e-06
+    ],
+    "refractive_indices": [
+      {
+        "real": 0.0,
+        "imag": 0.0
+      },
+      {
+        "real": 0.0,
+        "imag": 0.0
+      },
+      {
+        "real": 0.0,
+        "imag": 0.0
+      },
+      {
+        "real": 1.33,
+        "imag": 0.0
+      }
+    ],
+    "analyte_indices": [
+      {
+        "real": 1.33,
+        "imag": 0.0
+      },
+      {
+        "real": 1.335,
+        "imag": 0.0
+      }
+    ]
+  },
+  "Scenario1_Sim_SPR": {
+    "simulator": "SPR",
+    "coupling": "Prism",
+    "interrogation_mode": "AIM",
+    "layers": [
+      {
+        "material": "BK7",
+        "thickness": "1000",
+        "refractiveIndex": " 1.51508+0j ",
+        "description": "",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Silver",
+        "thickness": "38",
+        "refractiveIndex": " 0.08031+4.23467j ",
+        "description": "",
+        "dispersionModel": "drude",
+        "drudeLambdaP": "0.14541",
+        "drudeLambdaC": "17.614"
+      },
+      {
+        "material": "Nickel",
+        "thickness": "15",
+        "refractiveIndex": " 0.03032+2.28426j ",
+        "description": "",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Custom",
+        "thickness": "0.53",
+        "refractiveIndex": " 3.5+0.01j ",
+        "description": "",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Analyte",
+        "thickness": "1000",
+        "refractiveIndex": "1.33 - 1.335",
+        "description": ""
+      }
+    ],
+    "material_names": [
+      "BK7",
+      "Silver",
+      "Nickel",
+      "Custom",
+      "Analyte"
+    ],
+    "material_ids": [
+      0,
+      12,
+      29,
+      23,
+      19
+    ],
+    "thicknesses_m": [
+      1.0000000000000002e-06,
+      3.8e-08,
+      1.5000000000000002e-08,
+      5.3e-10,
+      1.0000000000000002e-06
+    ],
+    "refractive_indices": [
+      {
+        "real": 1.51508,
+        "imag": 0.0
+      },
+      {
+        "real": 0.08031,
+        "imag": 4.23467
+      },
+      {
+        "real": 0.03032,
+        "imag": 2.28426
+      },
+      {
+        "real": 3.5,
+        "imag": 0.01
+      },
+      {
+        "real": 1.33,
+        "imag": 0.0
+      }
+    ],
+    "analyte_indices": [
+      {
+        "real": 1.33,
+        "imag": 0.0
+      },
+      {
+        "real": 1.335,
+        "imag": 0.0
+      }
+    ]
+  },
+  "Scenario3_Sim_SPR": {
+    "simulator": "SPR",
+    "coupling": "Prism",
+    "interrogation_mode": "AIM",
+    "layers": [
+      {
+        "material": "BK7",
+        "thickness": "1000",
+        "refractiveIndex": " 1.50786+0j ",
+        "description": "",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Analyte",
+        "thickness": "3000",
+        "refractiveIndex": "1.0 - 1.005",
+        "description": ""
+      },
+      {
+        "material": "Custom",
+        "thickness": "300",
+        "refractiveIndex": " 0.09+6.11j ",
+        "description": "",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      }
+    ],
+    "material_names": [
+      "BK7",
+      "Analyte",
+      "Custom"
+    ],
+    "material_ids": [
+      0,
+      19,
+      23
+    ],
+    "thicknesses_m": [
+      1.0000000000000002e-06,
+      3e-06,
+      3.0000000000000004e-07
+    ],
+    "refractive_indices": [
+      {
+        "real": 1.50786,
+        "imag": 0.0
+      },
+      {
+        "real": 1.0,
+        "imag": 0.0
+      },
+      {
+        "real": 0.09,
+        "imag": 6.11
+      }
+    ],
+    "analyte_indices": [
+      {
+        "real": 1.0,
+        "imag": 0.0
+      },
+      {
+        "real": 1.005,
+        "imag": 0.0
+      }
+    ]
+  },
+  "Scenario4_Sim_SPR": {
+    "simulator": "SPR",
+    "coupling": "Prism",
+    "interrogation_mode": "WIM",
+    "layers": [
+      {
+        "material": "SF11",
+        "thickness": "1000",
+        "refractiveIndex": "-",
+        "description": "",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Silica",
+        "thickness": "300",
+        "refractiveIndex": "-",
+        "description": "",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Custom",
+        "thickness": "9",
+        "refractiveIndex": " 1.43+0j ",
+        "description": "",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Analyte",
+        "thickness": "1",
+        "refractiveIndex": "1.55 - 1.56",
+        "description": ""
+      },
+      {
+        "material": "Copper",
+        "thickness": "1000",
+        "refractiveIndex": "-",
+        "description": "",
+        "dispersionModel": "experimental-filmetrics",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      }
+    ],
+    "material_names": [
+      "SF11",
+      "Silica",
+      "Custom",
+      "Analyte",
+      "Copper"
+    ],
+    "material_ids": [
+      30,
+      1,
+      23,
+      19,
+      13
+    ],
+    "thicknesses_m": [
+      1.0000000000000002e-06,
+      3.0000000000000004e-07,
+      9.000000000000001e-09,
+      1e-09,
+      1.0000000000000002e-06
+    ],
+    "refractive_indices": [
+      {
+        "real": 0.0,
+        "imag": 0.0
+      },
+      {
+        "real": 0.0,
+        "imag": 0.0
+      },
+      {
+        "real": 1.43,
+        "imag": 0.0
+      },
+      {
+        "real": 1.55,
+        "imag": 0.0
+      },
+      {
+        "real": 0.0,
+        "imag": 0.0
+      }
+    ],
+    "analyte_indices": [
+      {
+        "real": 1.55,
+        "imag": 0.0
+      },
+      {
+        "real": 1.56,
+        "imag": 0.0
+      }
+    ]
+  },
+  "Scenario1_Sim_LMR": {
+    "simulator": "LMR",
+    "coupling": "Prism",
+    "interrogation_mode": "AIM",
+    "layers": [
+      {
+        "material": "BK7",
+        "thickness": "1000",
+        "refractiveIndex": " 1.51947+0j ",
+        "description": "",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Custom",
+        "thickness": "2000",
+        "refractiveIndex": " 1.38+0j ",
+        "description": "",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Custom",
+        "thickness": "0.53",
+        "refractiveIndex": " 3.56+0.126j ",
+        "description": "",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Custom",
+        "thickness": "100",
+        "refractiveIndex": " 1.38+0j ",
+        "description": "",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Analyte",
+        "thickness": "1000",
+        "refractiveIndex": "1.38 - 1.3802",
+        "description": ""
+      }
+    ],
+    "material_names": [
+      "BK7",
+      "Custom",
+      "Custom",
+      "Custom",
+      "Analyte"
+    ],
+    "material_ids": [
+      0,
+      23,
+      23,
+      23,
+      19
+    ],
+    "thicknesses_m": [
+      1.0000000000000002e-06,
+      2.0000000000000003e-06,
+      5.3e-10,
+      1.0000000000000001e-07,
+      1.0000000000000002e-06
+    ],
+    "refractive_indices": [
+      {
+        "real": 1.51947,
+        "imag": 0.0
+      },
+      {
+        "real": 1.38,
+        "imag": 0.0
+      },
+      {
+        "real": 3.56,
+        "imag": 0.126
+      },
+      {
+        "real": 1.38,
+        "imag": 0.0
+      },
+      {
+        "real": 1.38,
+        "imag": 0.0
+      }
+    ],
+    "analyte_indices": [
+      {
+        "real": 1.38,
+        "imag": 0.0
+      },
+      {
+        "real": 1.3802,
+        "imag": 0.0
+      }
+    ]
+  },
+  "Scenario2_Sim_LMR": {
+    "simulator": "LMR",
+    "coupling": "Prism",
+    "interrogation_mode": "AIM",
+    "layers": [
+      {
+        "material": "BK7",
+        "thickness": "1000",
+        "refractiveIndex": " 1.51391+0j ",
+        "description": "",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Custom",
+        "thickness": "1000",
+        "refractiveIndex": " 1.3393+0j ",
+        "description": "",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Custom",
+        "thickness": "19.5",
+        "refractiveIndex": " 5.0805+1.1723j ",
+        "description": "",
+        "dispersionModel": "experimental",
+        "drudeLambdaP": "",
+        "drudeLambdaC": ""
+      },
+      {
+        "material": "Analyte",
+        "thickness": "1000",
+        "refractiveIndex": "1.357 - 1.367",
+        "description": ""
+      }
+    ],
+    "material_names": [
+      "BK7",
+      "Custom",
+      "Custom",
+      "Analyte"
+    ],
+    "material_ids": [
+      0,
+      23,
+      23,
+      19
+    ],
+    "thicknesses_m": [
+      1.0000000000000002e-06,
+      1.0000000000000002e-06,
+      1.9500000000000003e-08,
+      1.0000000000000002e-06
+    ],
+    "refractive_indices": [
+      {
+        "real": 1.51391,
+        "imag": 0.0
+      },
+      {
+        "real": 1.3393,
+        "imag": 0.0
+      },
+      {
+        "real": 5.0805,
+        "imag": 1.1723
+      },
+      {
+        "real": 1.357,
+        "imag": 0.0
+      }
+    ],
+    "analyte_indices": [
+      {
+        "real": 1.357,
+        "imag": 0.0
+      },
+      {
+        "real": 1.367,
+        "imag": 0.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+<RCC>
+  <qresource prefix="icons">
+    <file alias="sine-waves-analysis.png">../sim-spr-lmr-simulator/icons/sine-waves-analysis.png</file>
+    <file alias="eq_sellmeier.png">../sim-spr-lmr-simulator/eq_sellmeier.png</file>
+    <file alias="ilustração.png">../sim-spr-lmr-simulator/icons/ilustração.png</file>
+    <file alias="ilustração 2.png">../sim-spr-lmr-simulator/icons/ilustração 2.png</file>
+    <file alias="logo_spr.png">../sim-spr-lmr-simulator/icons/logo_spr.png</file>
+    <file alias="logo_lmr.png">../sim-spr-lmr-simulator/icons/logo_lmr.png</file>
+    <file alias="logo_lmr_spr.png">../sim-spr-lmr-simulator/icons/logo_lmr_spr.png</file>
+    <file alias="icons/1149635.png">../sim-spr-lmr-simulator/icons/1149635.png</file>
+    <file alias="icons/aim.png">../sim-spr-lmr-simulator/icons/aim.png</file>
+    <file alias="icons/arrow-down.png">../sim-spr-lmr-simulator/icons/arrow-down.png</file>
+    <file alias="icons/arrow-up.png">../sim-spr-lmr-simulator/icons/arrow-up.png</file>
+    <file alias="icons/botao-de-menu.png">../sim-spr-lmr-simulator/icons/botao-de-menu.png</file>
+    <file alias="icons/casa.png">../sim-spr-lmr-simulator/icons/casa.png</file>
+    <file alias="icons/close.png">../sim-spr-lmr-simulator/icons/close.png</file>
+    <file alias="icons/configuracoes.png">../sim-spr-lmr-simulator/icons/configuracoes.png</file>
+    <file alias="icons/charact_fiber.png">../sim-spr-lmr-simulator/icons/charact_fiber.png</file>
+    <file alias="icons/cladding_removed.png">../sim-spr-lmr-simulator/icons/cladding_removed.png</file>
+    <file alias="icons/D-shaped fiber.png">../sim-spr-lmr-simulator/icons/D-shaped fiber.png</file>
+    <file alias="icons/fiber.png">../sim-spr-lmr-simulator/icons/fiber.png</file>
+    <file alias="icons/fiber_CRMF.png">../sim-spr-lmr-simulator/icons/fiber_CRMF.png</file>
+    <file alias="icons/help.png">../sim-spr-lmr-simulator/icons/help.png</file>
+    <file alias="icons/icons8-opened-folder-30 (1).png">../sim-spr-lmr-simulator/icons/icons8-opened-folder-30 (1).png</file>
+    <file alias="icons/icons8-reload-96.png">../sim-spr-lmr-simulator/icons/icons8-reload-96.png</file>
+    <file alias="icons/layers.png">../sim-spr-lmr-simulator/icons/layers.png</file>
+    <file alias="icons/livro.png">../sim-spr-lmr-simulator/icons/livro.png</file>
+    <file alias="icons/LOGO.png">../sim-spr-lmr-simulator/icons/LOGO.png</file>
+    <file alias="icons/logout.png">../sim-spr-lmr-simulator/icons/logout.png</file>
+    <file alias="icons/logo_lmr.png">../sim-spr-lmr-simulator/icons/logo_lmr.png</file>
+    <file alias="icons/logo_lmr_spr.png">../sim-spr-lmr-simulator/icons/logo_lmr_spr.png</file>
+    <file alias="icons/logo_spr.png">../sim-spr-lmr-simulator/icons/logo_spr.png</file>
+    <file alias="icons/minimize.png.odg">../sim-spr-lmr-simulator/icons/minimize.png.odg</file>
+    <file alias="icons/multimode_fiber.png">../sim-spr-lmr-simulator/icons/multimode_fiber.png</file>
+    <file alias="icons/play.png">../sim-spr-lmr-simulator/icons/play.png</file>
+    <file alias="icons/prism.png">../sim-spr-lmr-simulator/icons/prism.png</file>
+    <file alias="icons/screen_set_layers.odg">../sim-spr-lmr-simulator/icons/screen_set_layers.odg</file>
+    <file alias="icons/simbolo-de-setas-duplas-para-a-direita-para-avancar.png">../sim-spr-lmr-simulator/icons/simbolo-de-setas-duplas-para-a-direita-para-avancar.png</file>
+    <file alias="icons/simbolo-de-setas-duplas-para-a-esquerda.png">../sim-spr-lmr-simulator/icons/simbolo-de-setas-duplas-para-a-esquerda.png</file>
+    <file alias="icons/wim.png">../sim-spr-lmr-simulator/icons/wim.png</file>
+    <file alias="icons/Plano_de_fundo/Plano_de_Fundo1.png">../sim-spr-lmr-simulator/icons/Plano_de_fundo/Plano_de_Fundo1.png</file>
+    <file alias="icons/Plano_de_fundo/Plano_de_Fundo2.png">../sim-spr-lmr-simulator/icons/Plano_de_fundo/Plano_de_Fundo2.png</file>
+  </qresource>
+</RCC>

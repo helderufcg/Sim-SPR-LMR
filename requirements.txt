@@ -1,0 +1,8 @@
+PyQt5
+qtrangeslider
+numpy
+scipy
+matplotlib
+pandas
+tabulate
+openpyxl
