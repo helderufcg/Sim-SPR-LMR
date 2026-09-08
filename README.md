@@ -33,10 +33,10 @@ The simulator is implemented in Python and provides a graphical user interface d
 </p>
 
 <p>
-  <a href="../../releases/tag/v1.0">
+  <a href="https://github.com/helderufcg/Sim-SPR-LMR/releases/tag/1.0">
     <img src="https://img.shields.io/badge/Release-v1.0-6c757d">
   </a>
-  <a href="../../releases/tag/v2.0">
+  <a href="https://github.com/helderufcg/Sim-SPR-LMR/releases/tag/v2.0">
     <img src="https://img.shields.io/badge/Release-v2.0-blue">
   </a>
 </p>
