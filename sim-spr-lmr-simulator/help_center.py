@@ -111,7 +111,7 @@ HELP_TOPICS = [
                 <li><b>Metals:</b> Gold (Au), Silver (Ag), Copper (Cu), Aluminum
                 (Al), Nickel (Ni), and Chromium.</li>
                 <li><b>Functional materials:</b> ITO, TiO2, ZnO, Silicon,
-                Doped SWCNT, FTO, P3HT:PC61BM, PEDOT:PSS, and 2D HOIP.</li>
+                Doped SWCNT, FTO, Graphene, P3HT:PC61BM, PEDOT:PSS, and 2D HOIP.</li>
                 <li><b>Surrounding media:</b> Water and Air.</li>
                 <li><b>Fiber-core materials:</b> Silica and PMMA.</li>
                 <li><b>Custom material:</b> user-defined complex index.</li>
@@ -128,6 +128,7 @@ HELP_TOPICS = [
                 <tr><td>Copper (Cu)</td><td>Interpolated experimental complex index; optional Drude model; alternative experimental table</td><td><a href="https://doi.org/10.1103/PhysRevB.6.4370">Johnson and Christy (1972)</a>; <a href="https://doi.org/10.1063/1.2721779">Sharma and Gupta (2007)</a>; <a href="https://www.kla.com/products/instruments/refractive-index-database/cu/copper">KLA/Filmetrics</a></td></tr>
                 <tr><td>Aluminum (Al)</td><td>Drude model</td><td><a href="https://doi.org/10.1063/1.2721779">Sharma and Gupta (2007)</a></td></tr>
                 <tr><td>Nickel (Ni)</td><td>Drude model</td><td><a href="https://doi.org/10.1007/s11082-023-05419-y">Kumar et al. (2023)</a></td></tr>
+                <tr><td>Graphene</td><td>n = 3 + i(5.446/3)&lambda; with &lambda; in &micro;m; layer thickness entered separately in nm</td><td><a href="https://doi.org/10.1063/1.3073717">Bruna and Borini (2009)</a></td></tr>
                 <tr><td>Chromium</td><td>Drude critical-point model</td><td><a href="https://doi.org/10.1088/0022-3727/40/22/043">Vial and Laroche (2007)</a></td></tr>
                 <tr><td>P3HT:PC61BM, PEDOT:PSS, 2D HOIP</td><td>Interpolated tabulated complex optical constants</td><td><a href="https://doi.org/10.1016/j.physb.2022.414048">Yadollahzadeh et al. (2022)</a>; <a href="https://refractiveindex.info/">RefractiveIndex.INFO</a></td></tr>
                 <tr><td>TiO2</td><td>Lorentz oscillator model</td><td><a href="https://doi.org/10.1364/OE.466170">Zhang et al. (2022)</a></td></tr>

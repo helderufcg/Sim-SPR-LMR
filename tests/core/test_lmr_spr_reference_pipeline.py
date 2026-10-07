@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from dataclasses import replace
 import unittest
+from unittest.mock import patch
 
 import numpy as np
 
@@ -16,6 +17,7 @@ from sim_spr_lmr.core.optics import (
 )
 from sim_spr_lmr.presentation.plotting import build_simulation_summary
 from sim_spr_lmr.core.optics.simulation_engine import (
+    _d_shaped_lp01_center_rad,
     _lmr_spr_layer_permittivity,
     _transmitted_power_batch,
     _transmitted_power_batch_tm,
@@ -145,19 +147,43 @@ class LmrSprReferencePipelineTests(unittest.TestCase):
         np.testing.assert_allclose(
             response,
             [
-                0.995479781982,
-                0.950123502905,
-                0.473423671297,
-                0.931929844422,
-                0.969957197949,
-                0.564131623458,
-                0.191615709206,
-                0.624270983266,
-                0.793475763075,
+                0.996061829376,
+                0.955024275343,
+                0.518714048986,
+                0.941610198403,
+                0.973925070770,
+                0.589232232797,
+                0.191660174015,
+                0.651392113699,
+                0.813157820365,
             ],
             rtol=0,
             atol=2e-10,
         )
+
+    def test_d_shaped_lp01_center_uses_500_nm_design_wavelength(self):
+        config = _d_shaped_reference_config()
+        self.assertAlmostEqual(
+            np.rad2deg(_d_shaped_lp01_center_rad(config)),
+            88.55082854465822,
+            places=8,
+        )
+
+    def test_d_shaped_envelope_switch_restores_ordinary_integral(self):
+        config = _d_shaped_reference_config()
+        wavelength = np.array([500e-9])
+        with patch(
+            "sim_spr_lmr.core.optics.simulation_engine.D_SHAPED_USE_MODAL_ENVELOPE",
+            False,
+        ):
+            ordinary = _transmitted_power_batch(config, wavelength, 1.33 + 0j)
+        with patch(
+            "sim_spr_lmr.core.optics.simulation_engine.D_SHAPED_USE_MODAL_ENVELOPE",
+            True,
+        ):
+            modal = _transmitted_power_batch(config, wavelength, 1.33 + 0j)
+        self.assertAlmostEqual(float(ordinary[0]), 0.10939714, places=7)
+        self.assertGreater(float(modal[0]), float(ordinary[0]))
 
     def test_parameter_mapper_accepts_prism_stack_for_lmr_spr(self):
         config = build_simulation_config(

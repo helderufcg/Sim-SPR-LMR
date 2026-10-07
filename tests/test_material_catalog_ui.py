@@ -37,6 +37,7 @@ class MaterialCatalogUiTests(unittest.TestCase):
                 self.assertIn("Nickel", items)
                 self.assertIn("SF11", items)
                 self.assertIn("Aluminum", items)
+                self.assertIn("Graphene", items)
                 self.assertIn("Custom", items)
                 self.assertEqual(items.count("Copper"), 1)
                 self.assertNotIn("Copper (Filmetrics)", items)

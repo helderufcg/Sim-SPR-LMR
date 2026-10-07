@@ -218,7 +218,7 @@ def _build_layer_payload(form_input: LayerFormInput) -> _LayerPayload:
                 "Experimental (Filmetrics) is available only for Copper.",
             )
 
-    if form_input.interrogation_mode == "AIM":
+    if form_input.interrogation_mode == "AIM" and form_input.material_name != "Graphene":
         real_part = _parse_float(form_input.real_part_text, ["real_part_index"])
         imaginary_part = _parse_float(form_input.imaginary_part_text, ["imaginary_part_index"])
         refractive_index = complex(real_part, imaginary_part)

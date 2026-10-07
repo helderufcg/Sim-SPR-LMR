@@ -2589,6 +2589,7 @@ class Ui_Widget(object):
         self.cbox_material.addItem("Air")
         self.cbox_material.addItem("LiF")
         self.cbox_material.addItem("Cytop")
+        self.cbox_material.addItem("Graphene")
         self.cbox_material.addItem("Custom")
 
 
@@ -3049,6 +3050,7 @@ class Ui_Widget(object):
         self.cbox_material_2.addItem("Air")
         self.cbox_material_2.addItem("LiF")
         self.cbox_material_2.addItem("Cytop")
+        self.cbox_material_2.addItem("Graphene")
         self.cbox_material_2.addItem("Custom")
         
         self.cbox_material_2.setObjectName(u"cbox_material_2")

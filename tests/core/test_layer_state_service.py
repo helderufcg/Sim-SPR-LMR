@@ -10,6 +10,22 @@ from sim_spr_lmr.application.layer_state_service import (
 
 
 class LayerStateServiceTests(unittest.TestCase):
+    def test_graphene_layer_keeps_subnanometer_thickness_without_manual_index(self):
+        for mode in ("AIM", "WIM"):
+            with self.subTest(mode=mode):
+                state = append_layer(
+                    LayerStateSnapshot(),
+                    LayerFormInput(
+                        material_name="Graphene",
+                        material_id=33,
+                        thickness_text="0.34",
+                        description="",
+                        interrogation_mode=mode,
+                    ),
+                )
+                self.assertAlmostEqual(state.thicknesses_m[0], 0.34e-9)
+                self.assertEqual(state.refractive_indices[0], 0j)
+
     def test_wim_custom_layer_accepts_n_and_defaults_empty_kappa_to_zero(self):
         state = append_layer(
             LayerStateSnapshot(),

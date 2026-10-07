@@ -48,7 +48,7 @@ SECTION_HEADER_STYLE = (
 )
 LABEL_STYLE = "font: 600 10.5pt 'Ubuntu'; color: rgb(23, 54, 93);"
 ERROR_STYLE = "font: 600 9pt 'Ubuntu'; color: rgb(176, 32, 32); padding-left: 4px;"
-UNIFORM_CARD_HEIGHT = 560
+UNIFORM_CARD_HEIGHT = 630
 SECTION_HEADER_HEIGHT = 42
 
 
@@ -294,7 +294,7 @@ def install_d_shaped_fiber_page(window: Any) -> None:
         suffix=" um",
     )
     window.d_shape_core_diameter.setToolTip(
-        "D_cr = 2*r_cr: core diameter. The article diagram labels the core radius as r_cr."
+        "D_cr = 2*r_core: core diameter; r_core is the core radius."
     )
 
     window.d_shape_outer_diameter = _spin_box(
@@ -308,7 +308,7 @@ def install_d_shaped_fiber_page(window: Any) -> None:
         suffix=" um",
     )
     window.d_shape_outer_diameter.setToolTip(
-        "D_cl = 2*r_cl: total fiber diameter, including core and cladding."
+        "D_cl = 2*r_cl: total fiber diameter; r_cl is the fiber outer radius."
     )
 
     window.d_shape_residual_cladding = _spin_box(
@@ -322,7 +322,7 @@ def install_d_shaped_fiber_page(window: Any) -> None:
         suffix=" um",
     )
     window.d_shape_residual_cladding.setToolTip(
-        "d_cl: distance between the core boundary and the polished surface."
+        "d_cl: residual cladding thickness between the core boundary and the D surface."
     )
 
     window.d_shape_core_error = _error_label("d_shape_core_error", geometry_group)
@@ -339,14 +339,14 @@ def install_d_shaped_fiber_page(window: Any) -> None:
     row = _add_field(
         geometry_layout,
         row,
-        label_html="D-shaped region length, <i>L</i>",
+        label_html="Longitudinal D-region length, <i>L</i>",
         widget=window.d_shape_length,
         parent=geometry_group,
     )
     row = _add_field(
         geometry_layout,
         row,
-        label_html="Core diameter, <i>D</i><sub>cr</sub> = 2<i>r</i><sub>cr</sub>",
+        label_html="Core diameter, <i>D</i><sub>cr</sub> = 2<i>r</i><sub>core</sub>",
         widget=window.d_shape_core_diameter,
         parent=geometry_group,
         error=window.d_shape_core_error,
@@ -361,7 +361,7 @@ def install_d_shaped_fiber_page(window: Any) -> None:
     row = _add_field(
         geometry_layout,
         row,
-        label_html="Residual cladding, <i>d</i><sub>cl</sub>",
+        label_html="Residual cladding thickness, <i>d</i><sub>cl</sub>",
         widget=window.d_shape_residual_cladding,
         parent=geometry_group,
         error=window.d_shape_residual_error,
@@ -374,7 +374,7 @@ def install_d_shaped_fiber_page(window: Any) -> None:
     row += 1
 
     derived_label = _field_label(
-        "Polished width, <i>W</i> "
+        "D-surface width, <i>W</i> "
         "<span style='font-size:9pt; color:#52697c;'>(derived)</span>",
         geometry_group,
     )
@@ -393,7 +393,7 @@ def install_d_shaped_fiber_page(window: Any) -> None:
     )
     formula_tooltip = (
         "Calculated automatically: W = 2*sqrt(r_cl^2 - h^2), "
-        "where h = r_cr + d_cl."
+        "where h = r_core + d_cl is the center-to-D-surface distance."
     )
     derived_label.setToolTip(formula_tooltip)
     window.d_shape_polished_width.setToolTip(formula_tooltip)
@@ -516,28 +516,42 @@ def install_d_shaped_fiber_page(window: Any) -> None:
     preview_layout.addWidget(window.d_shape_geometry_preview, 1)
 
     notation = QtWidgets.QLabel(
-        "<b>Notation</b><br>"
-        "<i>L</i>: sensing length &nbsp;|&nbsp; "
-        "<i>r</i><sub>cr</sub>: core radius &nbsp;|&nbsp; "
-        "<i>r</i><sub>cl</sub>: fiber radius<br>"
-        "<i>d</i><sub>cl</sub>: residual cladding &nbsp;|&nbsp; "
-        "<i>W</i>: polished width &nbsp;|&nbsp; <i>h</i> = "
-        "<i>r</i><sub>cr</sub> + <i>d</i><sub>cl</sub>",
+        "<b>Notation</b>"
+        "<table width='100%' cellspacing='0' cellpadding='0'>"
+        "<tr>"
+        "<td width='48%' valign='top'>"
+        "<i>r</i><sub>core</sub>: core radius<br>"
+        "<i>r</i><sub>cl</sub>: fiber outer radius<br>"
+        "<i>d</i><sub>cl</sub>: residual cladding thickness<br>"
+        "<i>L</i>: longitudinal length of the D region<br>"
+        "θ<sub>i</sub>: incidence angle relative to the normal"
+        "</td>"
+        "<td width='4%'>&nbsp;</td>"
+        "<td width='48%' valign='top'>"
+        "<i>h</i> = <i>r</i><sub>core</sub> + <i>d</i><sub>cl</sub>: center-to-D-surface distance<br>"
+        "<i>d</i><sub>p</sub> = <i>r</i><sub>cl</sub> − <i>h</i>: polishing depth<br>"
+        "<i>W</i> = 2√(<i>r</i><sub>cl</sub><sup>2</sup> − <i>h</i><sup>2</sup>): D-surface width<br>"
+        "<i>D</i><sub>eff</sub> = <i>r</i><sub>cl</sub> + <i>h</i>: D-surface-to-opposite-side distance"
+        "</td>"
+        "</tr>"
+        "</table>",
         preview_group,
     )
     notation.setObjectName("d_shape_notation")
     notation.setTextFormat(QtCore.Qt.RichText)
     notation.setWordWrap(True)
-    notation.setAlignment(QtCore.Qt.AlignCenter)
+    notation.setAlignment(QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
     notation.setStyleSheet(
-        "font: 11pt 'Ubuntu'; color: rgb(28,48,68); line-height: 1.25; "
+        "font: 9pt 'Ubuntu'; color: rgb(28,48,68); "
         "background: rgba(230,238,245,205); border-radius: 8px; padding: 10px 12px;"
     )
-    notation.setMinimumHeight(76)
-    notation.setMaximumHeight(90)
+    # Let the two-column legend grow only when a narrower window wraps text.
+    # On wide screens it stays compact so the geometry drawing receives more height.
+    notation.setMinimumHeight(210)
+    notation.setMaximumHeight(270)
     notation.setSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
     notation.setToolTip(
-        "The form accepts diameters D_cr and D_cl; the article figure uses radii r_cr and r_cl."
+        "The form accepts diameters D_cr = 2*r_core and D_cl = 2*r_cl."
     )
     preview_layout.addWidget(notation)
 

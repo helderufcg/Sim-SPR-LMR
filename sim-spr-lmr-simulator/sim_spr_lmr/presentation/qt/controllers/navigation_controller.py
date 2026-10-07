@@ -291,21 +291,21 @@ class NavigationController:
         self.label_title.setText(
             QtCore.QCoreApplication.translate(
                 "Widget",
-                '<html><head/><body><p align="center"><span style=" font-size:11pt;">Sim-LMR+SPR</span></p></body></html>',
+                '<html><head/><body><p align="center"><span style=" font-size:11pt;">Sim-SPR+LMR</span></p></body></html>',
                 None,
             )
         )
         self.label_footer.setText(
             QtCore.QCoreApplication.translate(
                 "Widget",
-                '<html><head/><body><p align="center">Sim-LMR+SPR v02.0_a</p></body></html>',
+                '<html><head/><body><p align="center">Sim-SPR+LMR v02.0_a</p></body></html>',
                 None,
             )
         )
         self.warning_2.setText(
             QtCore.QCoreApplication.translate(
                 "Widget",
-                "<html><head/><body><pre align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:500; font-family:'monospace'; color:#d49c10;\">- Sim-LMR+SPR supports Prism or Optical Fiber coupling - </span></pre><pre align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:500; font-family:'monospace'; color:#d49c10;\">- This implementation runs in WIM with TE, TM, or unpolarized (TE + TM) light - </span></pre></body></html>",
+                "<html><head/><body><pre align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:500; font-family:'monospace'; color:#d49c10;\">- Sim-SPR+LMR supports Prism or Optical Fiber coupling - </span></pre><pre align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:500; font-family:'monospace'; color:#d49c10;\">- This implementation runs in WIM with TE, TM, or unpolarized (TE + TM) light - </span></pre></body></html>",
             )
         )
 

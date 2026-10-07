@@ -125,6 +125,7 @@ MATERIAL_NAME_TO_ID = {
     "Aluminum": 32,
     "Aluminium": 32,
     "Al": 32,
+    "Graphene": 33,
 }
 
 MANUAL_MATERIAL_IDS = {23}
@@ -524,6 +525,13 @@ def calculate_refractive_index(material: int, lambda_i: float) -> complex:
 
     if material in MANUAL_MATERIAL_IDS:
         raise ValueError("Material requires a manual refractive index.")
+
+    if material == 33:  # Graphene
+        # Bruna and Borini, "Optical constants of graphene layers in the visible
+        # range," Applied Physics Letters 94, 031901 (2009).
+        # DOI: 10.1063/1.3073717. The wavelength in this model is in um.
+        wavelength_um = lambda_i * 1e6
+        return complex(3.0, (5.446 / 3.0) * wavelength_um)
 
     if material == 31:  # Calcium fluoride (CaF₂)
         return calculate_sellmeier_refractive_index(

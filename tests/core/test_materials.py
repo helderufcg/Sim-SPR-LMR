@@ -43,6 +43,23 @@ class MaterialsTests(unittest.TestCase):
         self.assertAlmostEqual(refractive_index.real, 1.5151, delta=0.002)
         self.assertAlmostEqual(refractive_index.imag, 0.0)
 
+    def test_graphene_uses_bruna_borini_visible_dispersion(self):
+        graphene_id = resolve_material_id("Graphene")
+        self.assertEqual(graphene_id, 33)
+        for wavelength_nm in (400, 633, 700):
+            with self.subTest(wavelength_nm=wavelength_nm):
+                expected = complex(3.0, (5.446 / 3.0) * wavelength_nm / 1000.0)
+                self.assertAlmostEqual(
+                    calculate_refractive_index(graphene_id, wavelength_nm * 1e-9).real,
+                    expected.real,
+                )
+                self.assertAlmostEqual(
+                    calculate_configured_refractive_index(
+                        graphene_id, wavelength_nm * 1e-9, material_name="Graphene"
+                    ).imag,
+                    expected.imag,
+                )
+
     def test_custom_sellmeier_matches_silica_catalog_near_633_nm(self):
         silica_coefficients = SellmeierCoefficients(
             b1=0.6961663,

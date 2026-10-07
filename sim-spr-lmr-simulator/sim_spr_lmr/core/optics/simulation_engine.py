@@ -13,6 +13,8 @@ from functools import lru_cache
 import time
 
 import numpy as np
+from scipy.optimize import brentq
+from scipy.special import j0, j1, k0, k1, jn_zeros
 
 from sim_spr_lmr.core.domain import LayerConfig, SimulationConfig, SimulationResult
 from sim_spr_lmr.core.materials import (
@@ -30,10 +32,58 @@ LogCallback = Callable[[str], None]
 
 LMR_SPR_BATCH_SIZE = 512
 
-# The D-shaped single-mode approximation uses a narrow Gaussian modal envelope.
-# Its center and width are fixed model constants rather than configurable fiber data.
-D_SHAPED_MODAL_CENTER_RAD = np.deg2rad(88.5)
+# Script-level switch between the ordinary angular power integral and its
+# LP01-centered Gaussian-envelope approximation for D-shaped fibers.
+D_SHAPED_USE_MODAL_ENVELOPE = False
+D_SHAPED_DESIGN_WAVELENGTH_M = 500e-9
+# Phenomenological angular width of the modal envelope, in radians.
 D_SHAPED_MODAL_SIGMA_RAD = np.deg2rad(0.1)
+
+
+def _d_shaped_lp01_center_rad(config: SimulationConfig) -> float:
+    """Return the fixed effective incidence angle of LP01 at the design wavelength.
+
+    Solve the scalar step-index characteristic equation in the fundamental
+    branch, 0 < u < the first zero of J0, with u² + w² = V² and
+    b = w² / V². The equivalent ray angle is measured from the interface normal.
+    """
+
+    if config.fiber is None:
+        raise ValueError("D-shaped modal center requires a fiber configuration.")
+    core_index = float(
+        np.real(
+            _resolve_lmr_spr_core_indices(
+                config, np.array([D_SHAPED_DESIGN_WAVELENGTH_M])
+            )[0]
+        )
+    )
+    cladding_index = float(
+        np.real(
+            _calculate_cladding_index(
+                core_index=complex(core_index),
+                numerical_aperture=config.fiber.numerical_aperture,
+                explicit_cladding_index=config.fiber.cladding_index,
+            )
+        )
+    )
+    index_difference = core_index**2 - cladding_index**2
+    if index_difference <= 0:
+        raise ValueError("LP01 requires a core index greater than the cladding index.")
+    radius_m = config.fiber.core_diameter_m / 2.0
+    v_number = (
+        (2.0 * np.pi * radius_m / D_SHAPED_DESIGN_WAVELENGTH_M)
+        * np.sqrt(index_difference)
+    )
+    upper_u = min(v_number, float(jn_zeros(0, 1)[0]))
+
+    def characteristic(u: float) -> float:
+        w = np.sqrt(v_number**2 - u**2)
+        return u * j1(u) / j0(u) - w * k1(w) / k0(w)
+
+    u = brentq(characteristic, np.finfo(float).eps, np.nextafter(upper_u, 0.0))
+    b = 1.0 - (u / v_number) ** 2
+    effective_index = np.sqrt(cladding_index**2 + b * index_difference)
+    return float(np.arcsin(effective_index / core_index))
 
 
 # Selects the correct prism/fiber and AIM/WIM execution path for the configuration.
@@ -362,58 +412,22 @@ def _transmitted_power_batch(
             (np.real(core_indices) ** 2 * np.sin(theta) * np.cos(theta))
             / (1 - (np.real(core_indices) ** 2 * np.cos(theta) ** 2)) ** 2
         )
-    if is_d_shaped:
-            # Effective-angle approximation for the single-mode D-shaped fiber:
-            #
-            # The fundamental mode of a single-mode fiber is characterized by a
-            # propagation constant beta and can be approximated by a Gaussian
-            # transverse field profile. Within the present ray/TMM formulation, this
-            # motivates representing the localized modal contribution by a narrow
-            # Gaussian angular envelope.
-            #
-            # References:
-            # D. Marcuse, JOSA 68, 103-109 (1978).
-            # DOI: 10.1364/JOSA.68.000103
-            #
-            # S. Nemoto and T. Makimoto,
-            # "Analysis of splice loss in single-mode fibres using a Gaussian
-            # field approximation," Optical and Quantum Electronics 11,
-            # 447-457 (1979).
-            # DOI: 10.1007/BF00619826
-            #
-            # V. M. da Silva Jr. et al., JMOe 20(3), 2021.
-            # DOI: 10.1590/2179-10742021v20i3254063
-            #
-            # Ray-based SPR models of single-mode D-shaped fibers have considered
-            # incidence angles close to grazing incidence (approximately 88-89.5 deg),
-            # supporting the choice of an effective angle within this range.
-            #
-            # M.-H. Chiu, C.-H. Shih, and M.-H. Chi,
-            # Sensors and Actuators B: Chemical 123(2), 1120-1124 (2007).
-            # DOI: 10.1016/j.snb.2006.11.039
-            #
-            # M.-H. Chiu, M.-H. Chi, and C.-H. Shih,
-            # "Optimum sensitivities of D-type optical fiber sensor at a specific
-            # incident angle," Applied Physics A 89, 413-416 (2007).
-            # DOI: 10.1007/s00339-007-4136-0
-            #
-            # M.-H. Chiu et al.,
-            # "Single-mode D-type optical fiber sensor in spectra method at a
-            # specific incident angle of 89 deg," Sensors & Transducers 104,
-            # 41-46 (2009).
-            #
-            #     G(theta) = exp[-0.5 * ((theta - theta_0) / sigma_theta)^2]
-            #
-            # with theta_0 = 88.5 deg and sigma_theta = 0.1 deg.
-            #
-            # Here, theta_0 is selected within the angular range reported for
-            # single-mode D-shaped SPR sensors. The parameter sigma_theta is a
-            # phenomenological numerical broadening used to localize the modal
-            # contribution within the angular-quadrature formulation; it should not
-            # be interpreted as a physical distribution of guided modes.
+    if is_d_shaped and D_SHAPED_USE_MODAL_ENVELOPE:
+        # Effective-angle approximation for the fundamental LP01 mode.
+        # The scalar step-index solution gives its propagation constant and
+        # hence theta_0 at the 500 nm design wavelength (Gloge, 1971,
+        # DOI: 10.1364/AO.10.002252). Keep theta_0 fixed across the scan.
+        #
+        # Fundamental-mode transverse fields can be approximated by Gaussians
+        # (Marcuse, 1978, DOI: 10.1364/JOSA.68.000103; Nemoto and Makimoto,
+        # 1979, DOI: 10.1007/BF00619826). This motivates, but does not derive,
+        # the narrow angular envelope used in this ray/TMM approximation:
+        # G(theta) = exp[-0.5 * ((theta - theta_0) / sigma_theta)^2].
+        # sigma_theta = 0.1 deg is a phenomenological numerical broadening,
+        # not a physical distribution of guided modes.
+        modal_center_rad = _d_shaped_lp01_center_rad(config)
         modal_envelope = np.exp(
-            -0.5
-            * ((theta - D_SHAPED_MODAL_CENTER_RAD) / D_SHAPED_MODAL_SIGMA_RAD) ** 2
+            -0.5 * ((theta - modal_center_rad) / D_SHAPED_MODAL_SIGMA_RAD) ** 2
         )
         weights = weights * modal_envelope
 
