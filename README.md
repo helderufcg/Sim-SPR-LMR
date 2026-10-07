@@ -1,6 +1,6 @@
-# Sim-SPR / Sim-LMR / Sim-LMR+SPR
+# Sim-SPR / Sim-LMR / Sim-SPR+LMR
 
-Sim-SPR / Sim-LMR / Sim-LMR+SPR is a free and open-source simulator for multilayer optical sensors based on Surface Plasmon Resonance (SPR), Lossy Mode Resonance (LMR), and combined LMR+SPR effects.
+Sim-SPR / Sim-LMR / Sim-SPR+LMR is a free and open-source simulator for multilayer optical sensors based on Surface Plasmon Resonance (SPR), Lossy Mode Resonance (LMR), and combined SPR+LMR effects.
 
 The simulator is implemented in Python and provides a graphical user interface developed with PyQt5.
 
@@ -53,7 +53,7 @@ The implemented simulator families are:
 
 - `SPR`: prism- or multimode-fiber-coupled multilayer simulation using the transfer-matrix method.
 - `LMR`: prism- or multimode-fiber-coupled simulation using the same multilayer optical engine, with resonance behavior defined by the chosen lossy coatings.
-- `LMR+SPR`: combined lossy-mode and plasmonic simulation with prism or optical-fiber coupling and wavelength interrogation.
+- `SPR+LMR`: combined lossy-mode and plasmonic simulation with prism or optical-fiber coupling and wavelength interrogation.
 
 ## Features
 
@@ -61,12 +61,12 @@ The implemented simulator families are:
 
 - SPR simulation.
 - LMR simulation.
-- Combined `LMR+SPR` simulation.
-- Prism coupling for `SPR`, `LMR`, and `LMR+SPR`.
-- Multimode optical-fiber coupling for `SPR`, `LMR`, and `LMR+SPR`.
+- Combined `SPR+LMR` simulation.
+- Prism coupling for `SPR`, `LMR`, and `SPR+LMR`.
+- Multimode optical-fiber coupling for `SPR`, `LMR`, and `SPR+LMR`.
 - AIM for prism-coupled `SPR` and `LMR`.
 - WIM for prism-coupled `SPR` and `LMR`.
-- WIM-only execution for `LMR+SPR`.
+- WIM-only execution for `SPR+LMR`.
 - TE, TM, and unpolarized `TE+TM` execution for the current implementation.
 
 ### Optical Stack Editing
@@ -83,7 +83,7 @@ The implemented simulator families are:
 The simulator provides the following output parameters from the simulated or imported resonance curves:
 
 - **Resonance curve**: optical response of the sensor as a function of incidence angle or wavelength.
-- **Resonance angle or resonance wavelength**: position of a resonance dip. In AIM, this parameter is reported as an angle in degrees. In WIM, it is reported as a wavelength in nanometers. For `LMR+SPR`, multiple significant dips may be detected.
+- **Resonance angle or resonance wavelength**: position of a resonance dip. In AIM, this parameter is reported as an angle in degrees. In WIM, it is reported as a wavelength in nanometers. For `SPR+LMR`, multiple significant dips may be detected.
 - **Minimum reflectance or minimum transmission**: lowest response value at the resonance dip.
 - **Sensitivity**: resonance shift divided by the analyte refractive-index variation, expressed as `deg/RIU` for AIM or `nm/RIU` for WIM.
 - **FWHM (Full Width at Half Maximum)**: width of the resonance dip measured at half of its local depth.
@@ -93,8 +93,8 @@ The simulator provides the following output parameters from the simulated or imp
 ### Results, Graphs, and Exports
 
 - Reflectance curve plotting.
-- Normalized transmission plotting for fiber-coupled `SPR`, `LMR`, and `LMR+SPR` simulations.
-- Reflectance-in-dB plotting for prism-coupled `LMR+SPR`.
+- Normalized transmission plotting for fiber-coupled `SPR`, `LMR`, and `SPR+LMR` simulations.
+- Reflectance-in-dB plotting for prism-coupled `SPR+LMR`.
 - Response curves for multiple analyte refractive indices.
 - Resonance point versus analyte plot.
 - Sensitivity versus analyte plot.
@@ -182,7 +182,7 @@ flowchart TB
             interrogation -->|WIM · all simulators| wim["WIM"]
 
             fiber_type -->|Multimode · all simulators| mmf["Configure fiber"]
-            fiber_type -->|D-shaped · LMR+SPR only| dfiber["Configure D-shaped fiber"]
+            fiber_type -->|D-shaped · SPR+LMR only| dfiber["Configure D-shaped fiber"]
 
             aim --> stack["Build optical stack and define analyte"]
             wim --> stack

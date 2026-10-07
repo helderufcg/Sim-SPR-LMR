@@ -1,6 +1,6 @@
 # Tests
 
-This directory contains the automated test suite for Sim-SPR / Sim-LMR / Sim-LMR+SPR. The tests use `pytest` as the test runner, while most test cases are organized with Python's `unittest` classes and assertions.
+This directory contains the automated test suite for Sim-SPR / Sim-LMR / Sim-SPR+LMR. The tests use `pytest` as the test runner, while most test cases are organized with Python's `unittest` classes and assertions.
 
 ### Core numerical and physical behavior
 
@@ -10,7 +10,7 @@ The [`core/`](core/) subdirectory tests the domain and optical calculations:
 - Transfer-matrix reflectance calculations for TE, TM, and unpolarized polarization.
 - Resonance position, FWHM, sensitivity, and figure-of-merit post-processing.
 - Automatic resonance detection and resonance-track association.
-- SPR, LMR, and combined LMR+SPR reference pipelines, including D-shaped fibers.
+- SPR, LMR, and combined SPR+LMR reference pipelines, including D-shaped fibers.
 - Reflectance response-scale conversion and related plot/export labels.
 
 ### Application and presentation behavior
@@ -77,7 +77,7 @@ python -m pytest -vv
 | `tests/core/test_transfer_matrix.py` | Fresnel and transfer-matrix calculations |
 | `tests/core/test_post_processing.py` | Resonance metrics and derived quantities |
 | `tests/core/test_resonance_tracking.py` | Multi-step resonance association |
-| `tests/core/test_lmr_spr_reference_pipeline.py` | LMR+SPR reference scenarios |
+| `tests/core/test_lmr_spr_reference_pipeline.py` | SPR+LMR reference scenarios |
 | `tests/core/test_response_scale.py` | Linear/dB response presentation and export |
 | `tests/test_fiber_compatibility.py` | Fiber navigation, mapping, and validation |
 | `tests/test_material_catalog_ui.py` | Material and polarization options in the UI |
