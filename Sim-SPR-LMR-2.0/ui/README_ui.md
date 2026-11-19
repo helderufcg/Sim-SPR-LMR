@@ -14,6 +14,12 @@ The current runtime still imports generated Python modules from:
 
 `sim-spr-lmr-simulator/`
 
+All paths below are relative to `Sim-SPR-LMR-2.0/`. From the repository root, first run:
+
+```powershell
+Set-Location .\Sim-SPR-LMR-2.0
+```
+
 Use the scripts in `tools/` to regenerate those modules:
 
 ```powershell

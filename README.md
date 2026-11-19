@@ -4,6 +4,13 @@ Sim-SPR / Sim-LMR / Sim-SPR+LMR is a free and open-source simulator for multilay
 
 The simulator is implemented in Python and provides a graphical user interface developed with PyQt5.
 
+## Repository
+
+- `Sim-SPR-LMR-1.0/`: version 1.0.
+- `Sim-SPR-LMR-2.0/`: version 2.0.
+
+The features and instructions below refer to version 2.0.
+
 ## Overview
 
 This simulator computes the optical response of multilayer sensing structures for refractive-index sensing studies. The user builds an optical stack, defines an analyte refractive-index sweep, chooses an interrogation mode, and runs a numerical simulation that produces reflectance or normalized transmission curves plus derived resonance metrics.
@@ -59,69 +66,41 @@ The simulator provides the following output parameters from the simulated or imp
 
 ```mermaid
 flowchart TB
-    start([Start]) --> home["Home screen"]
+    simulator{"Select simulator"}
+    simulator --> coupling{"Select coupling"}
 
-    subgraph FLOWS[" "]
-        direction LR
+    coupling -->|Prism| interrogation{"Select interrogation mode"}
+    coupling -->|Optical fiber| fiber_type{"Select fiber type"}
 
-        subgraph EXTERNAL["External curves"]
-            direction TB
+    interrogation -->|AIM · SPR/LMR| aim["AIM"]
+    interrogation -->|WIM · all simulators| wim["WIM"]
 
-            external["Read instructions"]
-            external --> load["Load 1–2 CSV/TXT files"]
-            load --> imported["View curves, resonances and FWHM"]
-            imported -->|Two curves + analyte Δn| external_metrics["View sensitivity and FOM"]
-            imported --> external_done([End])
-            external_metrics --> external_done
-        end
+    fiber_type -->|Multimode · all simulators| mmf["Configure fiber"]
+    fiber_type -->|D-Profile · SPR+LMR only| dfiber["Configure D-Profile fiber"]
 
-        subgraph MAIN["Main simulation workflow"]
-            direction TB
+    aim --> stack["Build optical stack and define analyte"]
+    wim --> stack
+    mmf --> stack
+    dfiber --> stack
 
-            simulator{"Select simulator"}
-            simulator --> coupling{"Select coupling"}
+    stack --> parameters["Set scan parameters and polarization"]
+    parameters --> run{"Run simulation"}
 
-            coupling -->|Prism| interrogation{"Select interrogation mode"}
-            coupling -->|Optical fiber| fiber_type{"Select fiber type"}
+    run -->|Invalid| review["Review highlighted configuration"]
+    review --> run
 
-            interrogation -->|AIM · SPR/LMR| aim["AIM"]
-            interrogation -->|WIM · all simulators| wim["WIM"]
+    run -->|Valid| processing["Calculate response, resonances and metrics"]
+    processing --> results{"View results"}
 
-            fiber_type -->|Multimode · all simulators| mmf["Configure fiber"]
-            fiber_type -->|D-Profile · SPR+LMR only| dfiber["Configure D-Profile fiber"]
+    results --> plots["Select plots"]
+    results --> export["Export data"]
+    results --> edit["Edit layers"]
+    results --> restart["New simulation"]
 
-            aim --> stack["Build optical stack and define analyte"]
-            wim --> stack
-            mmf --> stack
-            dfiber --> stack
-
-            stack --> parameters["Set scan parameters and polarization"]
-            parameters --> run{"Run simulation"}
-
-            run -->|Invalid| review["Review highlighted configuration"]
-            review --> run
-
-            run -->|Valid| processing["Calculate response, resonances and metrics"]
-            processing --> results{"View results"}
-
-            results --> plots["Select plots"]
-            results --> export["Export data"]
-            results --> edit["Edit layers"]
-            results --> restart["New simulation"]
-
-            edit --> stack
-            restart --> simulator
-            plots --> main_done([End])
-            export --> main_done
-        end
-    end
-
-    home -->|External curves| external
-    home -->|Start simulation| simulator
-
-    external ~~~ simulator
-
-    style FLOWS fill:none,stroke:none
+    edit --> stack
+    restart --> simulator
+    plots --> main_done([End])
+    export --> main_done
 ```
 
 ## External Libraries
@@ -157,16 +136,16 @@ python -m pip install -r requirements.txt
 
 ### Run the Application
 
-From the executable application folder:
+From the repository root, enter the version 2.0 application folder:
 
 ```bash
-cd sim-spr-lmr-simulator
+cd Sim-SPR-LMR-2.0/sim-spr-lmr-simulator
 python main.py
 ```
 
 On Windows PowerShell:
 
 ```powershell
-Set-Location .\sim-spr-lmr-simulator
+Set-Location .\Sim-SPR-LMR-2.0\sim-spr-lmr-simulator
 python .\main.py
 ```

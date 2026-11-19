@@ -35,7 +35,7 @@ The tests in the root of this directory cover application workflows and the Qt p
 - A Qt-compatible environment for UI tests. The parametric-analysis UI tests use
   `QT_QPA_PLATFORM=offscreen`, so they do not require a visible desktop window.
 
-Install the dependencies from the repository root:
+Install the dependencies from the repository root (the parent of `Sim-SPR-LMR-2.0/`):
 
 ```bash
 python -m pip install -r requirements.txt
@@ -47,7 +47,13 @@ python -m pip install pytest
 Run the complete suite from the repository root:
 
 ```bash
-python -m pytest
+python -m pytest Sim-SPR-LMR-2.0/tests
+```
+
+For the commands below, first enter the version 2.0 directory from the repository root:
+
+```bash
+cd Sim-SPR-LMR-2.0
 ```
 
 Run only the core tests:
@@ -66,7 +72,7 @@ python -m pytest tests/test_parametric_analysis_service.py -k thickness
 Use verbose output when investigating a failure:
 
 ```bash
-python -m pytest -vv
+python -m pytest tests -vv
 ```
 
 ## Test categories at a glance

@@ -6,7 +6,7 @@ param(
 $ErrorActionPreference = "Stop"
 
 $repoRoot = Split-Path -Parent $PSScriptRoot
-$appRoot = Join-Path $repoRoot "Sim-LMR-Interface--main\Sim-LMR-Interface--main"
+$appRoot = Join-Path $repoRoot "sim-spr-lmr-simulator"
 $uiRoot = Join-Path $repoRoot "ui"
 $defaultOutputRoot = Join-Path $repoRoot ".tmp\generated-ui"
 
