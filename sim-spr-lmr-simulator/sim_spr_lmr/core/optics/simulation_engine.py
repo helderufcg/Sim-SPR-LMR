@@ -33,8 +33,8 @@ LogCallback = Callable[[str], None]
 LMR_SPR_BATCH_SIZE = 512
 
 # Script-level switch between the ordinary angular power integral and its
-# LP01-centered Gaussian-envelope approximation for D-shaped fibers.
-D_SHAPED_USE_MODAL_ENVELOPE = False
+# LP01-centered Gaussian-envelope approximation for D-Profile fibers.
+D_SHAPED_USE_MODAL_ENVELOPE = True
 D_SHAPED_DESIGN_WAVELENGTH_M = 500e-9
 # Phenomenological angular width of the modal envelope, in radians.
 D_SHAPED_MODAL_SIGMA_RAD = np.deg2rad(0.1)
@@ -49,7 +49,7 @@ def _d_shaped_lp01_center_rad(config: SimulationConfig) -> float:
     """
 
     if config.fiber is None:
-        raise ValueError("D-shaped modal center requires a fiber configuration.")
+        raise ValueError("D-Profile modal center requires a fiber configuration.")
     core_index = float(
         np.real(
             _resolve_lmr_spr_core_indices(
@@ -343,9 +343,9 @@ def _transmitted_power_batch(
         residual_cladding = config.fiber.residual_cladding_thickness_m
         outer_diameter = config.fiber.outer_diameter_m
         if residual_cladding is None or residual_cladding < 0:
-            raise ValueError("D-shaped fiber residual cladding must be defined and non-negative.")
+            raise ValueError("D-Profile fiber residual cladding must be defined and non-negative.")
         if outer_diameter is None or outer_diameter <= 0:
-            raise ValueError("D-shaped fiber outer diameter must be greater than zero.")
+            raise ValueError("D-Profile fiber outer diameter must be greater than zero.")
 
         # The residual fluorinated cladding is a finite dispersive layer. Its
         # index is derived from the selected core and NA at every wavelength.
@@ -494,7 +494,7 @@ def _resolve_lmr_spr_core_indices(config: SimulationConfig, wavelengths_m: np.nd
 
     core = config.fiber.core
     if config.fiber.fiber_type == "d_shaped":
-        # D-shaped fibers use the configured catalog or custom coefficients.
+        # D-Profile fibers use the configured catalog or custom coefficients.
         # Removed-cladding silica uses the rounded constants defined by that model.
         return np.asarray(
             [_resolve_fiber_core_index(config, float(wavelength)) for wavelength in wavelengths_m],

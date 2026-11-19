@@ -172,7 +172,7 @@ def _validate_fiber_inputs(
     if parameter_input.fiber_type_code == 2:
         if parameter_input.fiber_outer_diameter_um <= 0:
             field_names.append("fiber_outer_diameter_um")
-            messages.append("D-shaped fiber outer diameter must be greater than zero.")
+            messages.append("D-Profile fiber outer diameter must be greater than zero.")
 
         if parameter_input.fiber_residual_cladding_um < 0:
             field_names.append("fiber_residual_cladding_um")
@@ -190,7 +190,7 @@ def _validate_fiber_inputs(
         ):
             field_names.extend(["fiber_core_diameter_um", "fiber_outer_diameter_um"])
             messages.append(
-                "D-shaped fiber core diameter must be smaller than its outer diameter."
+                "D-Profile fiber core diameter must be smaller than its outer diameter."
             )
 
         if (
@@ -199,7 +199,7 @@ def _validate_fiber_inputs(
         ):
             field_names.extend(["fiber_residual_cladding_um", "fiber_outer_diameter_um"])
             messages.append(
-                "D-shaped fiber residual cladding cannot exceed the fiber radius."
+                "D-Profile fiber residual cladding cannot exceed the fiber radius."
             )
         elif (
             outer_radius_um > 0
@@ -215,7 +215,7 @@ def _validate_fiber_inputs(
                 ]
             )
             messages.append(
-                "D-shaped geometry requires core radius plus residual cladding "
+                "D-Profile geometry requires core radius plus residual cladding "
                 "to be smaller than the fiber outer radius."
             )
 

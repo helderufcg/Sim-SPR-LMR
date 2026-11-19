@@ -1344,7 +1344,7 @@ class Ui_Widget(object):
             self.multimode_fiber_option_label)
         self.horizontalLayout_45.addWidget(self.multimode_fiber_option)
 
-        # The D-shaped geometry is a fiber configuration, not a coupling mode.
+        # The D-Profile geometry is a fiber configuration, not a coupling mode.
         self.d_shaped_fiber_option = QtWidgets.QWidget(self.frame_fiber)
         self.d_shaped_fiber_option_layout = QtWidgets.QVBoxLayout(
             self.d_shaped_fiber_option)
@@ -5056,9 +5056,9 @@ class Ui_Widget(object):
         self.fiber_btn.setAccessibleName(_translate("Widget", u"Optical Fiber", None))
         self.d_shaped_fiber_btn.setText("")
         self.d_shaped_fiber_btn.setToolTip(_translate(
-            "Widget", u"D-shaped fiber with residual cladding", None))
+            "Widget", u"D-Profile optical fiber with residual cladding", None))
         self.d_shaped_fiber_btn.setAccessibleName(_translate(
-            "Widget", u"D-shaped fiber with residual cladding", None))
+            "Widget", u"D-Profile optical fiber with residual cladding", None))
         self.warning_2.setText(_translate("Widget", u"<html><head/><body><pre align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a name=\"tw-target-text-container\"/><span style=\" font-weight:500; font-family:'monospace'; color:#ffffff;\"/><span style=\" font-weight:500; font-family:'monospace'; color:#ffffff;\">- Select an option for optical coupling - </span></pre></body></html>", None))
         self.prev_btn_coup.setText(_translate("Widget", u" Previous", None))
         self.next_btn_coup.setText(_translate("Widget", u"Next ", None))
@@ -5084,13 +5084,13 @@ class Ui_Widget(object):
         self.label_fiber_type.setText(_translate("Widget", u"<html><head/><body><p align=\"center\"><span style=\" color:#ffffff;\">Fiber configuration</span></p></body></html>", None))
         self.cladding_remove_btn.setText("")
         self.cladding_remove_btn.setToolTip(_translate(
-            "Widget", u"Cladding-removed multimode fiber", None))
+            "Widget", u"Multimode optical fiber with Cladding-removed", None))
         self.cladding_remove_btn.setAccessibleName(_translate(
-            "Widget", u"Cladding-removed multimode fiber", None))
+            "Widget", u"Multimode optical fiber with Cladding-removed", None))
         self.multimode_fiber_option_label.setText(_translate(
-            "Widget", u"Cladding-removed multimode fiber", None))
+            "Widget", u"Multimode optical fiber with Cladding-removed", None))
         self.d_shaped_fiber_option_label.setText(_translate(
-            "Widget", u"D-shaped fiber with residual cladding", None))
+            "Widget", u"D-Profile optical fiber with residual cladding", None))
         self.warning_fiber_typ.setText(_translate("Widget", u"<html><head/><body><pre align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a name=\"tw-target-text-container\"/><span style=\" font-family:'monospace'; color:#ffffff;\">-</span><span style=\" font-family:'monospace'; color:#ffffff;\"> Select a fiber configuration - </span></pre></body></html>", None))
         self.prev_btn_fiber_typ.setText(_translate("Widget", u" Previous", None))
         self.next_btn_fiber_typ.setText(_translate("Widget", u"Next ", None))
@@ -5103,7 +5103,7 @@ class Ui_Widget(object):
         self.label_40.setText("")
         self.btn_charact_fiber.setText(_translate("Widget", u"Multimode fiber characteristics", None))
         self.character_fiber_label.setText(_translate(
-            "Widget", u"Characteristics of cladding-removed multimode fiber", None))
+            "Widget", u"Characteristics of Multimode optical fiber with Cladding-removed", None))
         self.character_fiber_subtitle.setText(_translate(
             "Widget", u"Configure the sensing-region geometry and optical properties.", None))
         self.ilustration.setText("")

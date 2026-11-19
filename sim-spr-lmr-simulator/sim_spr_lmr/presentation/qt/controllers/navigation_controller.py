@@ -114,7 +114,7 @@ class NavigationController:
         """Keep shared layer/range breadcrumbs consistent with the selected route."""
         is_fiber = self.session_state.coupling_mode == 2
         fiber_name = (
-            "D-shaped fiber"
+            "D-Profile fiber"
             if self.session_state.fiber_type_code == 2
             else "Multimode fiber"
         )
@@ -302,12 +302,7 @@ class NavigationController:
                 None,
             )
         )
-        self.warning_2.setText(
-            QtCore.QCoreApplication.translate(
-                "Widget",
-                "<html><head/><body><pre align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:500; font-family:'monospace'; color:#d49c10;\">- Sim-SPR+LMR supports Prism or Optical Fiber coupling - </span></pre><pre align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:500; font-family:'monospace'; color:#d49c10;\">- This implementation runs in WIM with TE, TM, or unpolarized (TE + TM) light - </span></pre></body></html>",
-            )
-        )
+        self.warning_2.setText("")
 
     def prism_btn_clicked(self) -> None:
         self._reset_layer_stack_if_changed(self.session_state.coupling_mode, 1)
@@ -328,7 +323,7 @@ class NavigationController:
             QtCore.QCoreApplication.translate(
                 "Widget",
                 "<html><head/><body><pre align=\"center\"><span style=\"font-weight:500; "
-                "font-family:'monospace'; color:#37eb00;\">- D-shaped fiber with residual "
+                "font-family:'monospace'; color:#37eb00;\">- D-Profile optical fiber with residual "
                 "cladding selected - </span></pre><pre align=\"center\"><span style=\"font-weight:500; "
                 "font-family:'monospace'; color:#37eb00;\">Next to continue..."
                 "</span></pre></body></html>",
@@ -337,7 +332,7 @@ class NavigationController:
         self.session_state.fiber_type_code = 2
 
     def fiber_cr_clicked(self) -> None:
-        self.warning_fiber_typ.setText(QtCore.QCoreApplication.translate("Widget", "<html><head/><body><pre align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a name=\"tw-target-text-container\"/><span style=\" font-weight:500; font-family:\'monospace\'; color:#37eb00;\">- Cladding-removed multimode fiber selected - </span></pre><pre align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:500; font-family:'monospace'; color:#37eb00;\">Next to continue...</span></pre></body></html>"))
+        self.warning_fiber_typ.setText(QtCore.QCoreApplication.translate("Widget", "<html><head/><body><pre align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a name=\"tw-target-text-container\"/><span style=\" font-weight:500; font-family:\'monospace\'; color:#37eb00;\">- Multimode optical fiber with Cladding-removed selected - </span></pre><pre align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:500; font-family:'monospace'; color:#37eb00;\">Next to continue...</span></pre></body></html>"))
         self.session_state.fiber_type_code = 1
 
 # Routes the Next action according to the page currently shown in the wizard.

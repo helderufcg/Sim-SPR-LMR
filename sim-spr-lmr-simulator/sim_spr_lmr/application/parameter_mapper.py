@@ -320,19 +320,19 @@ def _validate_multimode_fiber_parameter_set(
 
     if parameters.fiber_type_code == 2:
         if parameters.fiber_outer_diameter_um <= 0:
-            raise ValueError("D-shaped fiber outer diameter must be greater than zero.")
+            raise ValueError("D-Profile fiber outer diameter must be greater than zero.")
         if parameters.fiber_residual_cladding_um < 0:
-            raise ValueError("D-shaped fiber residual cladding cannot be negative.")
+            raise ValueError("D-Profile fiber residual cladding cannot be negative.")
         if parameters.fiber_core_diameter_um >= parameters.fiber_outer_diameter_um:
             raise ValueError(
-                "D-shaped fiber core diameter must be smaller than its outer diameter."
+                "D-Profile fiber core diameter must be smaller than its outer diameter."
             )
         if (
             parameters.fiber_residual_cladding_um
             > parameters.fiber_outer_diameter_um / 2.0
         ):
             raise ValueError(
-                "D-shaped fiber residual cladding cannot exceed the fiber radius."
+                "D-Profile fiber residual cladding cannot exceed the fiber radius."
             )
         if (
             parameters.fiber_core_diameter_um / 2.0
@@ -340,7 +340,7 @@ def _validate_multimode_fiber_parameter_set(
             >= parameters.fiber_outer_diameter_um / 2.0
         ):
             raise ValueError(
-                "D-shaped geometry requires core radius plus residual cladding "
+                "D-Profile geometry requires core radius plus residual cladding "
                 "to be smaller than the fiber outer radius."
             )
 
@@ -374,19 +374,19 @@ def _validate_lmr_spr_parameter_set(
             raise ValueError("Fiber numerical aperture must be greater than zero.")
         if parameters.fiber_type_code == 2:
             if parameters.fiber_outer_diameter_um <= 0:
-                raise ValueError("D-shaped fiber outer diameter must be greater than zero.")
+                raise ValueError("D-Profile fiber outer diameter must be greater than zero.")
             if parameters.fiber_residual_cladding_um < 0:
-                raise ValueError("D-shaped fiber residual cladding cannot be negative.")
+                raise ValueError("D-Profile fiber residual cladding cannot be negative.")
             if parameters.fiber_core_diameter_um >= parameters.fiber_outer_diameter_um:
                 raise ValueError(
-                    "D-shaped fiber core diameter must be smaller than its outer diameter."
+                    "D-Profile fiber core diameter must be smaller than its outer diameter."
                 )
             if (
                 parameters.fiber_residual_cladding_um
                 > parameters.fiber_outer_diameter_um / 2.0
             ):
                 raise ValueError(
-                    "D-shaped fiber residual cladding cannot exceed the fiber radius."
+                    "D-Profile fiber residual cladding cannot exceed the fiber radius."
                 )
             if (
                 parameters.fiber_core_diameter_um / 2.0
@@ -394,7 +394,7 @@ def _validate_lmr_spr_parameter_set(
                 >= parameters.fiber_outer_diameter_um / 2.0
             ):
                 raise ValueError(
-                    "D-shaped geometry requires core radius plus residual cladding "
+                    "D-Profile geometry requires core radius plus residual cladding "
                     "to be smaller than the fiber outer radius."
                 )
 

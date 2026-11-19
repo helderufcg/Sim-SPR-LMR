@@ -10,7 +10,7 @@ The [`core/`](core/) subdirectory tests the domain and optical calculations:
 - Transfer-matrix reflectance calculations for TE, TM, and unpolarized polarization.
 - Resonance position, FWHM, sensitivity, and figure-of-merit post-processing.
 - Automatic resonance detection and resonance-track association.
-- SPR, LMR, and combined SPR+LMR reference pipelines, including D-shaped fibers.
+- SPR, LMR, and combined SPR+LMR reference pipelines, including D-Profile fibers.
 - Reflectance response-scale conversion and related plot/export labels.
 
 ### Application and presentation behavior

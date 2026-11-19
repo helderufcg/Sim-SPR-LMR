@@ -33,7 +33,7 @@ from sim_spr_lmr.presentation.qt import (
     enable_analyte_inputs,               # Enables analyte fields
     enable_layer_inputs,                 # Enables layer fields
     install_range_slider_compatibility, # Range-slider compatibility (wavelength/angle)
-    install_d_shaped_fiber_page,        # Installs the D-shaped fiber page
+    install_d_shaped_fiber_page,        # Installs the D-Profile fiber page
     install_wizard_navigation_style,   # Visual style for wizard navigation
 )
 
@@ -110,7 +110,7 @@ class MainWindow(QWidget, Ui_Widget):
         super(MainWindow,self).__init__()
         self.setupUi(self)
 
-        # Adds the D-shaped fiber-specific page to the interface.
+        # Adds the D-Profile fiber-specific page to the interface.
         install_d_shaped_fiber_page(self)
 
         # Creates aliases for names used by different generated UI versions.

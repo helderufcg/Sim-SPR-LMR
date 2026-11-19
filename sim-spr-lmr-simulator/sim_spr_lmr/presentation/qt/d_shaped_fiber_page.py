@@ -1,4 +1,4 @@
-"""Runtime-built characteristics page for D-shaped optical fibers."""
+"""Runtime-built characteristics page for D-Profile optical fibers."""
 
 from __future__ import annotations
 
@@ -9,7 +9,7 @@ from typing import Any
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-# Styles and dimensions used by the runtime-built D-shaped fiber form.
+# Styles and dimensions used by the runtime-built D-Profile fiber form.
 INPUT_STYLE = (
     "QDoubleSpinBox { color: rgb(10, 25, 90); font: 700 12pt 'Ubuntu'; "
     "border: 2px solid rgb(23, 54, 93); background: rgba(255,255,255,210); "
@@ -159,9 +159,9 @@ def _set_field_error(
     error_label.setVisible(has_error)
 
 
-# Builds and attaches the D-shaped fiber characteristics page at runtime.
+# Builds and attaches the D-Profile fiber characteristics page at runtime.
 def install_d_shaped_fiber_page(window: Any) -> None:
-    """Create and register the D-shaped geometry page on the main wizard."""
+    """Create and register the D-Profile geometry page on the main wizard."""
 
     page = QtWidgets.QWidget()
     page.setObjectName("d_shaped_characteristics")
@@ -217,14 +217,14 @@ def install_d_shaped_fiber_page(window: Any) -> None:
     breadcrumb_layout.addWidget(window.btn_fiber_type_d_shape)
     add_breadcrumb_separator()
 
-    breadcrumb_current = QtWidgets.QLabel("D-shaped fiber characteristics", breadcrumb)
+    breadcrumb_current = QtWidgets.QLabel("D-Profile fiber characteristics", breadcrumb)
     breadcrumb_current.setObjectName("d_shape_breadcrumb_current")
     breadcrumb_current.setStyleSheet("font: 500 10.5pt 'Ubuntu'; color: white;")
     breadcrumb_layout.addWidget(breadcrumb_current)
     breadcrumb_layout.addStretch(1)
     page_layout.addWidget(breadcrumb)
 
-    title = QtWidgets.QLabel("Characteristics of D-shaped fiber with residual cladding", page)
+    title = QtWidgets.QLabel("Characteristics of D-Profile optical fiber with residual cladding", page)
     title.setObjectName("d_shaped_characteristics_title")
     title.setAlignment(QtCore.Qt.AlignCenter)
     title.setStyleSheet('font: 500 18pt "Ubuntu"; color: white; padding: 4px;')
@@ -281,7 +281,7 @@ def install_d_shaped_fiber_page(window: Any) -> None:
         step=0.1,
         suffix=" mm",
     )
-    window.d_shape_length.setToolTip("L: length of the polished D-shaped sensing region.")
+    window.d_shape_length.setToolTip("L: length of the polished D-Profile sensing region.")
 
     window.d_shape_core_diameter = _spin_box(
         geometry_group,
@@ -504,7 +504,7 @@ def install_d_shaped_fiber_page(window: Any) -> None:
     preview_pixmap = QtGui.QPixmap(str(image_path))
     if preview_pixmap.isNull():
         window.d_shape_geometry_preview.setText(
-            "Geometry image unavailable.\nExpected: icons/D-shaped geometry.png"
+            "D-Profile geometry image unavailable."
         )
         window.d_shape_geometry_preview.setStyleSheet(
             "font: 600 10pt 'Ubuntu'; color: rgb(150,30,30); "
@@ -542,7 +542,7 @@ def install_d_shaped_fiber_page(window: Any) -> None:
     notation.setWordWrap(True)
     notation.setAlignment(QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
     notation.setStyleSheet(
-        "font: 9pt 'Ubuntu'; color: rgb(28,48,68); "
+        "font: 500 9.5pt 'Ubuntu'; color: rgb(28,48,68); "
         "background: rgba(230,238,245,205); border-radius: 8px; padding: 10px 12px;"
     )
     # Let the two-column legend grow only when a narrower window wraps text.
